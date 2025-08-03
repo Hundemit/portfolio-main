@@ -89,27 +89,6 @@ export default async function Blog({
         </Suspense>
       </div>
       <article className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: post.source }}></article>
-      <Carousel className="mt-8">
-        <CarouselContent>
-          <CarouselItem className="gap-2">
-            <div className="flex flex-col items-center justify-center bg-[#171717] rounded-lg  h-64 w-full border border-gray-700">
-              <p>Moin</p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="">
-            <div className="flex flex-col items-center justify-center bg-[#171717] rounded-lg  h-64 w-full border border-gray-700">
-              <p>Moin</p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="">
-            <div className="flex flex-col items-center justify-center bg-[#171717] rounded-lg  h-64 w-full border border-gray-700">
-              <p>Moin</p>
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
     </section>
   );
 }
