@@ -9,6 +9,8 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbPage, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbList } from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -69,7 +71,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog">
+    <section id="blog" className="sm:-mt-8">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -90,6 +92,22 @@ export default async function Blog({
           }),
         }}
       />
+      <Breadcrumb className="mb-4">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">Home</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/projects">Projekte</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <BlurFade delay={BLUR_FADE_DELAY}>
         <h1 className="title font-medium text-3xl tracking-tighter max-w-[650px]">{post.metadata.title}</h1>
       </BlurFade>
@@ -108,7 +126,7 @@ export default async function Blog({
           {post.metadata.links && post.metadata.links.length > 0 && (
             <div className="flex gap-1 ml-auto w-full sm:w-auto mt-1 sm:mt-0 ">
               {post.metadata.links.map((link, id) => (
-                <Button key={id} variant="outline" className=" w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
+                <Button key={id} variant="outline" className="mt-4 sm:mt-0 w-full  hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
                   <Icons.globe className="size-3" />
                   {link.type}
                 </Button>

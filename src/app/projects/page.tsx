@@ -1,10 +1,9 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { getBlogPosts } from "@/data/blog";
-import Link from "next/link";
 
 export const metadata = {
-  title: "Blog",
+  title: "Projekte",
   description: "My thoughts on software development, life, and more.",
 };
 
