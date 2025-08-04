@@ -1,15 +1,15 @@
 import { CONTACT_INFO } from "./contact-info";
 import { EDUCATION } from "./education";
+import { NAVIGATION } from "./navigation";
 import { PERSONAL_INFO } from "./personal-info";
-import { PROJECTS } from "./projects";
-import { SKILLS_AND_NAVIGATION } from "./skills-and-navigation";
+import { SKILLS } from "./skills";
 import { WORK_EXPERIENCE } from "./work-experience";
 
 export const DATA = {
   personal: PERSONAL_INFO,
-  skills: SKILLS_AND_NAVIGATION,
+  skills: SKILLS,
+  navigation: NAVIGATION,
   contact: CONTACT_INFO,
   work: WORK_EXPERIENCE,
   education: EDUCATION,
-  projects: PROJECTS,
 } as const;

@@ -19,9 +19,9 @@ export const CONTACT_INFO = {
     },
     email: {
       name: "Send Email",
-      url: "#",
+      url: "mailto:janhindemit1@gmail.com",
       icon: Icons.email,
-      navbar: false,
+      navbar: true,
     },
   },
 } as const;

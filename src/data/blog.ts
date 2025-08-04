@@ -1,3 +1,4 @@
+"use server";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -7,13 +8,7 @@ import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-};
+import { Metadata } from "../lib/types";
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
@@ -45,9 +40,18 @@ export async function getPost(slug: string) {
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: metadata as Metadata,
     slug,
   };
+}
+
+export async function getPostsByNames(slugs: string[]) {
+  return Promise.all(
+    slugs.map(async (s) => {
+      const { metadata, source, slug } = await getPost(s);
+      return { metadata, source, slug };
+    })
+  );
 }
 
 async function getAllPosts(dir: string) {

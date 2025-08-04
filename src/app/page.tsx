@@ -1,16 +1,21 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { Marquee } from "@/components/magicui/marquee";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { getBlogPosts } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
+import { BookMarkedIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function Page() {
+export default async function Page() {
+  const projects = await getBlogPosts();
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -93,7 +98,9 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge className="hover:-translate-y-1 transition-all duration-300 ease-out" key={skill}>
+                  {skill}
+                </Badge>
               </BlurFade>
             ))}
           </div>
@@ -105,30 +112,77 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">Meine Projekte</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Schau dir meine neuesten Projekte an</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Schau dir meine neuesten{" "}
+                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 hover:underline transition-all duration-1000 ease-out">
+                    Projekte
+                  </Link>{" "}
+                  an.
+                </h2>
+
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Ich habe an verschiedenen Projekten gearbeitet, von einfachen Websites bis hin zu komplexen Webanwendungen. Hier sind einige meiner Favoriten.
                 </p>
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
-          </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+              <Marquee className="[--duration:15s] my-10">
+                {projects.map((project, id) => (
+                  <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-72">
+                    <ProjectCard
+                      slug={project.slug}
+                      title={project.metadata.title}
+                      description={project.metadata.description}
+                      dates={project.metadata.dates}
+                      tags={project.metadata.technologies}
+                      image={project.metadata.image}
+                      video={project.metadata.video}
+                      links={project.metadata.links}
+                      descriptionShow={true}
+                    />
+                  </div>
+                ))}
+              </Marquee>
+              {/* <Marquee pauseOnHover className="[--duration:10s]">
+                {projects.slice(0, Math.ceil(projects.length / 2)).map((project, id) => (
+                  <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-52">
+                    <ProjectCard
+                      slug={project.slug}
+                      title={project.metadata.title}
+                      description={project.metadata.description}
+                      dates={project.metadata.dates}
+                      tags={project.metadata.technologies}
+                      image={project.metadata.image}
+                      video={project.metadata.video}
+                      links={project.metadata.links}
+                      descriptionShow={false}
+                    />
+                  </div>
+                ))}
+              </Marquee>
+              <Marquee reverse pauseOnHover className="[--duration:10s] ">
+                {projects.slice(Math.ceil(projects.length / 2), projects.length).map((project, id) => (
+                  <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-52">
+                    <ProjectCard
+                      slug={project.slug}
+                      title={project.metadata.title}
+                      description={project.metadata.description}
+                      dates={project.metadata.dates}
+                      tags={project.metadata.technologies}
+                      image={project.metadata.image}
+                      video={project.metadata.video}
+                      links={project.metadata.links}
+                      descriptionShow={false}
+                    />
+                  </div>
+                ))}
+              </Marquee> */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+            </div>
+          </BlurFade>
         </div>
       </section>
 

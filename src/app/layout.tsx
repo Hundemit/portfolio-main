@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6", fontSans.variable)} suppressHydrationWarning>
-        <div className="rounded-3xl fixed inset-0 w-screen h-screen z-[5] pointer-events-none opacity-[0.05] [background-image:url('/background.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] " />
+        <div className="rounded-3xl fixed inset-0 w-screen h-screen z-[5] pointer-events-none opacity-[0.03] [background-image:url('/background.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] " />
         <ThemeProvider attribute="class" defaultTheme="light">
           <div className="rounded-xl ">
             <TooltipProvider delayDuration={0}>
