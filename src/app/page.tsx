@@ -6,11 +6,14 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { FlipWords } from "@/components/ui/flip-words";
+import { ClientOnly } from "@/components/ui/client-only";
 import { getBlogPosts } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { BookMarkedIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -24,11 +27,16 @@ export default async function Page() {
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
-                <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={10} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
+                <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
                   {`Hallo,  i'm ${DATA.personal.name.split(" ")[0]} 👋`}
                 </SparklesText>
               </BlurFade>
-              <BlurFadeText className="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY + 0.1} text={DATA.personal.description} />
+
+              <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
+                <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={Array.from(DATA.personal.description)} />
+              </BlurFade>
+
+              {/* <BlurFadeText className="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY + 0.1} text={DATA.personal.description[0]} /> */}
             </div>
             <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
               <Avatar className="size-28 border">
@@ -44,9 +52,7 @@ export default async function Page() {
           <h2 className="text-xl font-bold">Über mich</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <div suppressHydrationWarning>
-            <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
-          </div>
+          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
         </BlurFade>
       </section>
       <section id="work">
@@ -109,11 +115,10 @@ export default async function Page() {
         </div>
       </section>
       <section id="projects">
-        <div className="space-y-12 w-full py-12">
+        <div className="w-full py-16">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">Meine Projekte</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Schau dir meine neuesten{" "}
                   <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 hover:underline transition-all duration-1000 ease-out" suppressHydrationWarning>
@@ -147,40 +152,7 @@ export default async function Page() {
                   </div>
                 ))}
               </Marquee>
-              {/* <Marquee pauseOnHover className="[--duration:10s]">
-                {projects.slice(0, Math.ceil(projects.length / 2)).map((project, id) => (
-                  <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-52">
-                    <ProjectCard
-                      slug={project.slug}
-                      title={project.metadata.title}
-                      description={project.metadata.description}
-                      dates={project.metadata.dates}
-                      tags={project.metadata.technologies}
-                      image={project.metadata.image}
-                      video={project.metadata.video}
-                      links={project.metadata.links}
-                      descriptionShow={false}
-                    />
-                  </div>
-                ))}
-              </Marquee>
-              <Marquee reverse pauseOnHover className="[--duration:10s] ">
-                {projects.slice(Math.ceil(projects.length / 2), projects.length).map((project, id) => (
-                  <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-52">
-                    <ProjectCard
-                      slug={project.slug}
-                      title={project.metadata.title}
-                      description={project.metadata.description}
-                      dates={project.metadata.dates}
-                      tags={project.metadata.technologies}
-                      image={project.metadata.image}
-                      video={project.metadata.video}
-                      links={project.metadata.links}
-                      descriptionShow={false}
-                    />
-                  </div>
-                ))}
-              </Marquee> */}
+
               <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
               <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
             </div>
@@ -188,11 +160,10 @@ export default async function Page() {
         </div>
       </section>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-24">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">Kontakt</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nimm Kontakt auf</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nimm Kontakt auf.</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Willst du mit mir sprechen? Schreibe mir einfach eine Nachricht und ich werde mich so schnell wie möglich melden.
               </p>

@@ -6,7 +6,9 @@ export const PROFILE = {
   url: "https://janhindemit.de",
   location: "Trappenkamp, DE",
   locationLink: "https://www.google.com/maps/place/trappenkamp",
-  description: "Ich entwickle gerne kreative, benutzerfreundliche Software im Team.",
+
+  description: ["Ich entwickle gerne einfache und nützliche Software.", "Ich finde gerne clevere Lösungen für schwierige Aufgaben.", "Mir sind guter Code und Teamarbeit wichtig."],
+
   summary:
     "Ich habe einen Bachelor in [Medieninformatik](/#education) und praktische Erfahrung als UI/UX-Designer und Frontend-Entwickler gesammelt. Während meines Studiums und in verschiedenen Projekten entwickelte ich responsive Webanwendungen mit [React, Angular und Tailwind CSS](/#projects). Dabei arbeitete ich eng mit Product Ownern zusammen, setzte Prototypen in [Figma](https://www.figma.com) um und baute Systeme mit klarer Code-Struktur, Wiederverwendbarkeit und Fokus auf Usability. Aktuell arbeite ich an eigenen [Projekten](/#projects), bei denen ich Design, technische Umsetzung und Produktstrategie eigenständig verantworte.",
   avatarUrl: "/me.png",
