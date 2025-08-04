@@ -1,6 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Marquee } from "@/components/magicui/marquee";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -17,20 +18,19 @@ export default async function Page() {
   const projects = await getBlogPosts();
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-[100dvh] space-y-10" suppressHydrationWarning>
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hallo,  i'm ${DATA.personal.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText className="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY} text={DATA.personal.description} />
+              <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
+                <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={10} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
+                  {`Hallo,  i'm ${DATA.personal.name.split(" ")[0]} 👋`}
+                </SparklesText>
+              </BlurFade>
+              <BlurFadeText className="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY + 0.1} text={DATA.personal.description} />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
+            <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
               <Avatar className="size-28 border">
                 <AvatarImage className="object-cover" alt={DATA.personal.name} src={DATA.personal.avatarUrl} />
                 <AvatarFallback>{DATA.personal.initials}</AvatarFallback>
@@ -44,7 +44,9 @@ export default async function Page() {
           <h2 className="text-xl font-bold">Über mich</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
+          <div suppressHydrationWarning>
+            <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
+          </div>
         </BlurFade>
       </section>
       <section id="work">
@@ -114,7 +116,7 @@ export default async function Page() {
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">Meine Projekte</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Schau dir meine neuesten{" "}
-                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 hover:underline transition-all duration-1000 ease-out">
+                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 hover:underline transition-all duration-1000 ease-out" suppressHydrationWarning>
                     Projekte
                   </Link>{" "}
                   an.
@@ -128,7 +130,7 @@ export default async function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 12}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-              <Marquee className="[--duration:15s] my-10">
+              <Marquee className="[--duration:15s] py-4">
                 {projects.map((project, id) => (
                   <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-72">
                     <ProjectCard

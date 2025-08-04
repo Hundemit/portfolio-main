@@ -39,6 +39,7 @@ const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOf
           duration,
           ease: "easeOut",
         }}
+        suppressHydrationWarning
         className={className}>
         {children}
       </motion.div>

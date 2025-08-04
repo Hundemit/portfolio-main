@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
-export const PROFILE_INFO = {
+export const PROFILE = {
   name: "Jan Hindemit",
   initials: "DV",
   url: "https://janhindemit.de",
@@ -19,13 +19,7 @@ export const PROFILE_INFO = {
       icon: Github,
       navbar: true,
     },
-    github2: {
-      name: "GitHub",
-      url: "https://dub.sh/github-hundemit",
-      icon: Github,
-      navbar: true,
-    },
-    linkedIn: {
+    LinkedIn: {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/jan-hindemit/",
       icon: Linkedin,
