@@ -42,9 +42,7 @@ export async function getPost(slug: string) {
   const filePath = path.join("content", `${slug}.mdx`);
   let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
-  console.log(rawContent);
   const content = await markdownToHTML(rawContent);
-  console.log(content);
   return {
     source: content,
     metadata,

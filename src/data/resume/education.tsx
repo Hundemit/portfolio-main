@@ -7,5 +7,7 @@ export const EDUCATION = [
     logoUrl: "/education/hochschule-flensburg.png",
     start: "September 2018",
     end: "Juni 2025",
+    badges: ["B.Sc. Medieninformatik"],
+    description: `Studium der Medieninformatik an der Hochschule Flensburg.`,
   },
 ] as const;
