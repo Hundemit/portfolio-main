@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="fixed bottom-10 left-0 right-0 z-50 ">
+    <div className="fixed bottom-2 sm:bottom-10 left-0 right-0 z-50 ">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navigation.navbar.map((item) => (

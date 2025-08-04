@@ -54,7 +54,7 @@ export default async function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className="text-xl font-bold">Berufserfahrung</h2>
           </BlurFade>
-          {DATA.work.map((work, id) => (
+          {DATA.experience.work.map((work, id) => (
             <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
               <ResumeCard
                 key={work.company}
@@ -76,7 +76,7 @@ export default async function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">Ausbildung</h2>
           </BlurFade>
-          {DATA.education.map((education, id) => (
+          {DATA.experience.education.map((education, id) => (
             <BlurFade key={education.school} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
               <ResumeCard
                 key={education.school}
@@ -187,7 +187,6 @@ export default async function Page() {
           </BlurFade>
         </div>
       </section>
-
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
