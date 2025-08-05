@@ -130,7 +130,7 @@ export default async function Page() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Schau dir meine neuesten{" "}
-                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 hover:underline transition-all duration-1000 ease-out" suppressHydrationWarning>
+                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 underline transition-all duration-1000 ease-out" suppressHydrationWarning>
                     Projekte
                   </Link>{" "}
                   an.

@@ -10,14 +10,17 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="fixed bottom-2 sm:bottom-10 left-0 right-0 z-50 ">
+    <div className="fixed bottom-2 sm:bottom-10 left-0 right-0 z-50 duration-200">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navigation.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link href={item.href} aria-label={item.label} className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12 aspect-square rounded-full")}>
+                  <Link
+                    href={item.href}
+                    aria-label={item.label}
+                    className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12 aspect-square rounded-xl hover:bg-black/10  dark:hover:bg-white/10 backdrop-blur-sm")}>
                     <item.icon className="size-4" />
                   </Link>
                 </TooltipTrigger>
@@ -32,7 +35,10 @@ export default function Navbar() {
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link href={social.url} aria-label={social.name} className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12 aspect-square  rounded-full")}>
+                  <Link
+                    href={social.url}
+                    aria-label={social.name}
+                    className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12 aspect-square  rounded-xl hover:bg-black/10  dark:hover:bg-white/10 backdrop-blur-sm")}>
                     <social.icon className="size-4 " />
                   </Link>
                 </TooltipTrigger>
