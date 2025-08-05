@@ -14,10 +14,7 @@ export default async function BlogPage() {
 
   return (
     <section>
-      <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">Projekte</h1>
-      </BlurFade>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-4">
         {projects
           .sort((a, b) => {
             if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {

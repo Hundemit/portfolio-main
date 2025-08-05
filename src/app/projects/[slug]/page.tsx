@@ -71,7 +71,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog" className="sm:-mt-8">
+    <section id="blog" className="">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -92,21 +92,6 @@ export default async function Blog({
           }),
         }}
       />
-      <Breadcrumb className="mb-4">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/">Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/projects">Projekte</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
 
       <BlurFade delay={BLUR_FADE_DELAY}>
         <h1 className="title font-medium text-3xl tracking-tighter max-w-[650px]">{post.metadata.title}</h1>
