@@ -10,10 +10,11 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { ClientOnly } from "@/components/ui/client-only";
 import { getBlogPosts } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
-import { BookMarkedIcon } from "lucide-react";
+import { ArrowDownToLine, BookMarkedIcon, FileDown } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { Button } from "@/components/ui/button";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -35,8 +36,6 @@ export default async function Page() {
               <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
                 <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={Array.from(DATA.personal.description)} />
               </BlurFade>
-
-              {/* <BlurFadeText className="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY + 0.1} text={DATA.personal.description[0]} /> */}
             </div>
             <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
               <Avatar className="size-28 border">
@@ -53,6 +52,12 @@ export default async function Page() {
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 5}>
+          <Button variant="outline" className="mt-4 w-full">
+            <ArrowDownToLine className="size-4" />
+            <span>Lebenslauf</span>
+          </Button>
         </BlurFade>
       </section>
       <section id="work">
