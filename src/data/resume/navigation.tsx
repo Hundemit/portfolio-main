@@ -4,6 +4,6 @@ import { BookMarkedIcon, HomeIcon } from "lucide-react";
 export const NAVIGATION = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/projects", icon: BookMarkedIcon, label: "Projects" },
+    { href: "/blog", icon: BookMarkedIcon, label: "Blog" },
   ],
 } as const;

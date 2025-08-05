@@ -36,7 +36,7 @@ export function ProjectCard({ title, slug, description, dates, tags, link, image
   return (
     <Card
       onClick={() => {
-        router.push(`/projects/${slug}`);
+        router.push(`/blog/${slug}`);
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
       suppressHydrationWarning={true}

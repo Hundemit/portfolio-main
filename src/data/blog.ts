@@ -47,8 +47,8 @@ export async function getPost(slug: string) {
       slug,
     };
   } catch (error) {
-    // Wenn die Datei nicht gefunden wird, leite zu /projects weiter
-    redirect("/projects");
+    // Wenn die Datei nicht gefunden wird, leite zu /blog weiter
+    redirect("/blog");
   }
 }
 

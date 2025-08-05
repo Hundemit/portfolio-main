@@ -1,7 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { getBlogPosts } from "@/data/blog";
-import { ProjectsBreadcrumb } from "@/components/projects-breadcrumb";
+import { ProjectsBreadcrumb } from "@/components/blog-breadcrumb";
 
 export const metadata = {
   title: "Projekte",

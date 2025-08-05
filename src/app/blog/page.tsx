@@ -3,7 +3,7 @@ import { ProjectCard } from "@/components/project-card";
 import { getBlogPosts } from "@/data/blog";
 
 export const metadata = {
-  title: "Projekte",
+  title: "Blog",
   description: "My thoughts on software development, life, and more.",
 };
 

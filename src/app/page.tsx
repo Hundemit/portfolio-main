@@ -130,7 +130,7 @@ export default async function Page() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Schau dir meine neuesten{" "}
-                  <Link href="/projects" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 underline transition-all duration-1000 ease-out" suppressHydrationWarning>
+                  <Link href="/blog" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 underline transition-all duration-1000 ease-out" suppressHydrationWarning>
                     Projekte
                   </Link>{" "}
                   an.
@@ -144,7 +144,7 @@ export default async function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 41}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-              <Marquee className="[--duration:15s] py-4">
+              <Marquee className="[--duration:40s] py-4">
                 {projects.map((project, id) => (
                   <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-72">
                     <ProjectCard

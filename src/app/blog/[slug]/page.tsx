@@ -2,7 +2,7 @@ import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BlurFade from "@/components/magicui/blur-fade";
@@ -109,12 +109,12 @@ export default async function Blog({
           {post.metadata.links && post.metadata.links.length > 0 && (
             <div className="flex gap-1 ml-auto w-full mt-4 ">
               {post.metadata.links.map((link, id) => (
-                <Button key={id} variant="outline" className=" w-full  hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
-                  <Link className="flex gap-2 items-center" href={link.href} target="_blank">
+                <Link key={id} href={link.href} className="w-full" target="_blank">
+                  <Button variant="outline" className="w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
                     <Icons.globe className="size-3" />
                     {link.type}
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               ))}
             </div>
           )}
