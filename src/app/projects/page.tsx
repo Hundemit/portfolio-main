@@ -14,7 +14,7 @@ export default async function BlogPage() {
 
   return (
     <section>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-4f">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-4">
         {projects
           .sort((a, b) => {
             if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {

@@ -12,26 +12,28 @@ export function ProjectsBreadcrumb() {
   const isProjectsPage = pathname === "/projects";
 
   return (
-    <BlurFade delay={BLUR_FADE_DELAY}>
-      <Breadcrumb className="mb-2">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link className="hover:underline" href="/">
-                Home
-              </Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link className="hover:underline" href="/projects">
-                <h1 className={`font-medium tracking-tighter duration-500 ${isProjectsPage ? "text-2xl" : "text-md"}`}>Projekte</h1>
-              </Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-    </BlurFade>
+    <div className="sticky sm:static top-0 left-0 z-10 bg-background sm:bg-transparent backdrop-blur-sm ">
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <Breadcrumb className="py-4 ">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link className="hover:underline" href="/">
+                  Home
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link className="hover:underline" href="/projects">
+                  <h1 className={`font-medium leading-none m-0 p-0 tracking-tighter duration-700 transition-all ease-out ${isProjectsPage ? "scale-150 ml-3" : "scale-100 ml-0"}`}>Projekte</h1>
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </BlurFade>
+    </div>
   );
 }
