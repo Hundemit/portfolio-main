@@ -40,7 +40,7 @@ export function ProjectCard({ title, slug, description, dates, tags, link, image
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
       suppressHydrationWarning={true}
-      className={"flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-105 cursor-pointer w-full"}>
+      className={"flex h-full flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-105 cursor-pointer w-full"}>
       {video && (
         <div className="h-40 w-full overflow-hidden">
           {isMounted && (
@@ -55,7 +55,7 @@ export function ProjectCard({ title, slug, description, dates, tags, link, image
           )}
         </div>
       )}
-      {image && <Image src={image} alt={title} width={500} height={300} className="h-40 w-full overflow-hidden object-cover object-top" />}
+      {image && <Image src={image} alt={title} width={500} height={300} className="h-40 w-full overflow-hidden object-cover object-top shadow-none rounded-none" />}
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>

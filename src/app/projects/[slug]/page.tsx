@@ -2,7 +2,7 @@ import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Suspense } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BlurFade from "@/components/magicui/blur-fade";
@@ -65,10 +65,6 @@ export default async function Blog({
 }) {
   const { slug } = await params;
   let post = await getPost(slug);
-
-  if (!post) {
-    notFound();
-  }
 
   return (
     <section id="blog" className="">

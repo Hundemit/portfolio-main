@@ -9,6 +9,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { Metadata } from "../lib/types";
+import { notFound, redirect } from "next/navigation";
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
@@ -35,14 +36,20 @@ export async function markdownToHTML(markdown: string) {
 
 export async function getPost(slug: string) {
   const filePath = path.join("content", `${slug}.mdx`);
-  let source = fs.readFileSync(filePath, "utf-8");
-  const { content: rawContent, data: metadata } = matter(source);
-  const content = await markdownToHTML(rawContent);
-  return {
-    source: content,
-    metadata: metadata as Metadata,
-    slug,
-  };
+
+  try {
+    let source = fs.readFileSync(filePath, "utf-8");
+    const { content: rawContent, data: metadata } = matter(source);
+    const content = await markdownToHTML(rawContent);
+    return {
+      source: content,
+      metadata: metadata as Metadata,
+      slug,
+    };
+  } catch (error) {
+    // Wenn die Datei nicht gefunden wird, leite zu /projects weiter
+    redirect("/projects");
+  }
 }
 
 export async function getPostsByNames(slugs: string[]) {
