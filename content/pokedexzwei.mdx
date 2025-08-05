@@ -1,0 +1,44 @@
+---
+publishedAt: "2025-07-29"
+summary: "Ein moderner Pokédex mit Live-Suche, Filterfunktion und interaktiven Statistiken."
+title: "Pokédex 2.0"
+dates: "Juli 2025"
+active: true
+description: "Mit Next.js, Tailwind CSS und der PokéAPI entstand eine performante, nutzerfreundliche Pokédex-App."
+technologies:
+  - Next.js
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Zustand
+  - SWR
+  - PokéAPI
+image: "/content/pokedexzwei/cover.png"
+video: ""
+links:
+  - type: "Website"
+    href: "https://pokedex.janhindemit.de/landing" # Optional anpassen
+    icon: globe
+---
+
+![Coverbild](/content/pokedexzwei/cover.png)
+
+Mit Next.js und TypeScript habe ich eine einfache, responsive Pokédex-Web‑App gebaut, in der alle Pokémon übersichtlich gesammelt sind. Nutzer können schnell zu jedem Pokémon alle wichtigen Infos finden.
+
+# Techstack
+
+Ich setze Next.js 15 mit React 18 und TypeScript als Frontend‑Grundlage ein. Für das Styling nutze ich Tailwind CSS zusammen mit den wiederverwendbaren Komponenten von shadcn/ui und den Icons von Lucide React. Animationen werden mit Motion/React umgesetzt. Als State‑Management‑ und Data‑Fetching‑Lösungen kommen Zustand sowie SWR mit Caching, Revalidierung und Fehlerbehandlung zum Einsatz. Die Daten beziehe ich über die RESTful PokéAPI im JSON‑Format.
+
+![Techstack](/content/pokedexzwei/techstack.png)
+
+# Features
+
+Die Web‑App bietet eine leistungsstarke, live funktionierende Such‑ und Filterfunktion, mit der sich Pokémon nicht nur nach Namen durchsuchen, sondern auch nach Typen kombinieren lassen. Durch Infinite Scrolling werden zusätzliche Einträge automatisch nachgeladen, während Skeleton‑Loader und sanfte, spring‑basierte Animationen für ein geschmeidiges Nutzererlebnis sorgen.
+
+Ein integrierter Dark‑/Light‑Mode gibt jedem Anwender die Freiheit, die Darstellung der Seite an persönliche Vorlieben oder die Umgebungshelligkeit anzupassen. Zu den weiteren Highlights gehört die detailreiche Anzeige von Basis‑Statistiken in interaktiven Diagrammen, die per Lazy Loading und Caching dank SWR stets schnell geladen und aktuell gehalten werden.
+
+![Feature](/content/pokedexzwei/features.png)
+
+# Fazit
+
+Dieses erste Next.js‑Projekt hat mir meine React‑Erfahrung erweitert und mir gezeigt, wie einfach Deployment mit Vercel funktioniert. Ich habe moderne Tools wie Zustand und SWR für State‑Management und Data‑Fetching kennengelernt und dabei Caching‑ und Bild‑Optimierungsprobleme gelöst. Insgesamt habe ich gelernt, leistungsstarke, responsive Web‑Apps wartbar und nutzerfreundlich aufzubauen.

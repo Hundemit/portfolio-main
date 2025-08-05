@@ -121,14 +121,18 @@ export default async function Blog({
       <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
         <div className="flex flex-wrap gap-1 mb-8">
           {post.metadata.technologies.map((skill, id) => (
-            <Badge key={skill}>{skill}</Badge>
+            <Badge className="h-fit" key={skill}>
+              {skill}
+            </Badge>
           ))}
           {post.metadata.links && post.metadata.links.length > 0 && (
-            <div className="flex gap-1 ml-auto w-full sm:w-auto mt-1 sm:mt-0 ">
+            <div className="flex gap-1 ml-auto w-full mt-4 ">
               {post.metadata.links.map((link, id) => (
-                <Button key={id} variant="outline" className="mt-4 sm:mt-0 w-full  hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
-                  <Icons.globe className="size-3" />
-                  {link.type}
+                <Button key={id} variant="outline" className=" w-full  hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
+                  <Link className="flex gap-2 items-center" href={link.href} target="_blank">
+                    <Icons.globe className="size-3" />
+                    {link.type}
+                  </Link>
                 </Button>
               ))}
             </div>
