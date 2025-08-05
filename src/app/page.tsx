@@ -34,7 +34,9 @@ export default async function Page() {
               </BlurFade>
 
               <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
-                <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={Array.from(DATA.personal.description)} />
+                <div suppressHydrationWarning>
+                  <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={Array.from(DATA.personal.description)} />
+                </div>
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
