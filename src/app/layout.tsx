@@ -62,7 +62,7 @@ export default function RootLayout({
           <Particles className="hidden sm:block fixed left-0 inset-0 -z-10 h-screen w-screen" quantity={100} ease={80} color={"#b0b0b0"} refresh={true} />
           <div
             id="noise-background"
-            className="rounded-3xl fixed inset-0 w-screen h-screen z-[100] pointer-events-none opacity-[0.042] [background-image:url('/background.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] "
+            className="rounded-3xl fixed inset-0 w-screen h-screen z-[100] pointer-events-none opacity-[0.03] [background-image:url('/background.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] "
           />
           <div className="rounded-xl py-12 sm:py-24 px-6 bg-background">
             {children}
