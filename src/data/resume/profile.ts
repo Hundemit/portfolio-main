@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export const PROFILE = {
   name: "Jan Hindemit",
-  initials: "DV",
+  initials: "JH",
   url: "https://janhindemit.de",
   location: "Trappenkamp, DE",
   locationLink: "https://www.google.com/maps/place/trappenkamp",
