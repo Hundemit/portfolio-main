@@ -36,6 +36,7 @@ export default function Navbar() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
+                    target="_blank"
                     href={social.url}
                     aria-label={social.name}
                     className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12 aspect-square  rounded-xl hover:bg-black/10  dark:hover:bg-white/10 backdrop-blur-sm")}>

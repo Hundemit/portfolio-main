@@ -49,6 +49,7 @@ export default async function Page() {
         </div>
       </section>
       <section id="about">
+         
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">Über mich</h2>
         </BlurFade>
