@@ -144,7 +144,7 @@ export default async function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 41}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-              <Marquee className="[--duration:40s] py-4">
+              <Marquee className="py-4" style={{ "--duration": "40s" } as React.CSSProperties}>
                 {projects.map((project, id) => (
                   <div key={id} className="w-full sm:w-auto sm:max-w-72 max-w-72">
                     <ProjectCard

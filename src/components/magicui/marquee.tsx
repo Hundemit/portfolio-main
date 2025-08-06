@@ -36,7 +36,6 @@ export function Marquee({ className, reverse = false, pauseOnHover = false, chil
   return (
     <div
       {...props}
-      suppressHydrationWarning
       className={cn(
         "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
         {
@@ -51,10 +50,11 @@ export function Marquee({ className, reverse = false, pauseOnHover = false, chil
           <div
             key={i}
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
+              "animate-marquee flex-row": !vertical && !reverse,
+              "animate-marquee flex-row [animation-direction:reverse]": !vertical && reverse,
+              "animate-marquee-vertical flex-col": vertical && !reverse,
+              "animate-marquee-vertical flex-col [animation-direction:reverse]": vertical && reverse,
               "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
             })}>
             {children}
           </div>
