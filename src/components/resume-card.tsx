@@ -25,15 +25,14 @@ interface ResumeCardProps {
 export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleClick = () => {
     if (description) {
-      e.preventDefault();
       setIsExpanded(!isExpanded);
     }
   };
 
   return (
-    <Card className={cn("flex  sm:translate-y-0 duration-300 ease-out", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
+    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
       <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning>
         <div className="flex-none">
           <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground">
@@ -43,7 +42,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
         </div>
       </Link>
 
-      <Link href={href || "#"} className="block cursor-pointer" onClick={handleClick} target={href === "/projects" ? "_self" : "_blank"} suppressHydrationWarning>
+      <div className="block cursor-pointer" onClick={handleClick}>
         <div className="flex-grow ml-4 items-center flex-col group">
           <CardHeader className="">
             <div className="flex items-center justify-between gap-x-2 text-base">
@@ -71,12 +70,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
-
                 height: isExpanded ? "auto" : 0,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
               }}
               className="mt-2 text-xs sm:text-sm">
               {description.map((item, index) => (
@@ -88,7 +82,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
             </motion.div>
           )}
         </div>
-      </Link>
+      </div>
     </Card>
   );
 };
