@@ -9,7 +9,7 @@ export const metadata = {
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default async function BlogPage({ handleClick }: { handleClick: (title: string) => void }) {
+export default async function BlogPage() {
   const projects = await getBlogPosts();
 
   return (
