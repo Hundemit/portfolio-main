@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { FlipWords } from "@/components/ui/flip-words";
 import { ClientOnly } from "@/components/ui/client-only";
-import { getBlogPosts } from "@/data/blog";
+import { getPostsByNames } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { ArrowDownToLine, BookMarkedIcon, FileDown } from "lucide-react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 const BLUR_FADE_DELAY = 0.04;
 
 export default async function Page() {
-  const projects = await getBlogPosts();
+  const projects = await getPostsByNames(["pokedex-next", "google-cloud-data-analytics-zertifikat", "gyff", "vitepress"]);
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10 px-6 sm:my-24 my-12 duration-1000" suppressHydrationWarning>
