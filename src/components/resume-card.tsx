@@ -32,10 +32,10 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
   };
 
   return (
-    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
+    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
       <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning>
         <div className="flex-none">
-          <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground">
+          <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
             <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
