@@ -57,7 +57,7 @@ export default async function Page() {
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">{DATA.personal.summary}</Markdown>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <Link href="/CV-Jan-Hindemit.pdf" download>
+          <Link href="/CV Jan Hindemit.pdf" download>
             <Button variant="outline" className="mt-4 w-full">
               <ArrowDownToLine className="size-4" />
               <span>Lebenslauf</span>
