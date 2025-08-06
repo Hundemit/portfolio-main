@@ -17,7 +17,10 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
-  description?: string;
+  description?: {
+    title: string;
+    description: string;
+  }[];
 }
 export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -30,16 +33,19 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
   };
 
   return (
-    <Link href={href || "#"} className="block cursor-pointer" onClick={handleClick} target="_blank" suppressHydrationWarning>
-      <Card className="flex">
+    <Card className={cn("flex  sm:translate-y-0 duration-300 ease-out", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
+      <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning>
         <div className="flex-none">
-          <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
+          <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground">
             <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
+      </Link>
+
+      <Link href={href || "#"} className="block cursor-pointer" onClick={handleClick} target={href === "/projects" ? "_self" : "_blank"} suppressHydrationWarning>
         <div className="flex-grow ml-4 items-center flex-col group">
-          <CardHeader>
+          <CardHeader className="">
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
                 {title}
@@ -53,10 +59,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
                   </span>
                 )}
                 <ChevronRightIcon
-                  className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
-                  )}
+                  className={cn("size-4 ml-1 translate-x-0 transform transition-all duration-300 ease-out group-hover:translate-x-1", isExpanded ? "rotate-90 translate-x-1" : "rotate-0")}
                 />
               </h3>
               <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">{period}</div>
@@ -76,11 +79,16 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="mt-2 text-xs sm:text-sm">
-              {description}
+              {description.map((item, index) => (
+                <p className="mb-2" key={index}>
+                  <b>{item.title}:</b> <br />
+                  {item.description}
+                </p>
+              ))}
             </motion.div>
           )}
         </div>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 };

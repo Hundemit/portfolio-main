@@ -57,17 +57,15 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scroll-smooth" lang="en" suppressHydrationWarning>
-      <body className={cn("relative min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto", fontSans.variable)} suppressHydrationWarning>
+      <body className={cn("relative min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto rounded-xl  duration-1000", fontSans.variable)} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Particles className="hidden sm:block fixed left-0 inset-0 -z-10 h-screen w-screen" quantity={100} ease={80} color={"#b0b0b0"} refresh={true} />
           <div
             id="noise-background"
             className="rounded-3xl fixed inset-0 w-screen h-screen z-[100] pointer-events-none opacity-[0.03] [background-image:url('/background.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] "
           />
-          <div className="rounded-xl py-12 sm:py-24 px-6 bg-background">
-            {children}
-            <Navbar />
-          </div>
+          {children}
+          <Navbar />
         </ThemeProvider>
         <Analytics />
       </body>

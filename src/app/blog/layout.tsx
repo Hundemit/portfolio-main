@@ -14,12 +14,9 @@ export default async function BlogPageLayout({ children }: { children: React.Rea
   const projects = await getBlogPosts();
 
   return (
-    <section>
-      {/* <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">Projekte</h1>
-      </BlurFade> */}
+    <main className="mt-12 mb-24 sm:my-24 duration-1000">
       <ProjectsBreadcrumb />
       {children}
-    </section>
+    </main>
   );
 }

@@ -22,14 +22,14 @@ export default async function Page() {
   const projects = await getBlogPosts();
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10" suppressHydrationWarning>
+    <main className="flex flex-col min-h-[100dvh] space-y-10 px-6 sm:my-24 my-12 duration-1000" suppressHydrationWarning>
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
                 <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
-                  {`Hallo,  i'm ${DATA.personal.name.split(" ")[0]} 👋`}
+                  {`Hallo,  i'm ${DATA.personal.name.split(" ")[0]}✌️`}
                 </SparklesText>
               </BlurFade>
 

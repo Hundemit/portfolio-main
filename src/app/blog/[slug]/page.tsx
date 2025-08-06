@@ -67,7 +67,7 @@ export default async function Blog({
   let post = await getPost(slug);
 
   return (
-    <section id="blog" className="">
+    <section id="blog" className="px-6">
       <script
         type="application/ld+json"
         suppressHydrationWarning
