@@ -96,6 +96,29 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
   ],
   education: [
     {
+      school: "Cloud Data Analytics Zertifikat ",
+      href: "https://www.credly.com/badges/776c7137-80ca-4920-abc6-e4d8a1d12dff/public_url",
+      degree: "Professional Certificate in Cloud Data Analytics",
+      logoUrl: "/education/Google Zertifikat.png",
+      start: "November 2024",
+      end: "September 2025",
+      badges: ["Google Cloud Data Analytics"],
+      description: [
+        {
+          title: "Cloud Datenanalyse",
+          description: "Daten in der Google Cloud aufbereitet, bereinigt und mit SQL sowie BigQuery analysiert. ETL-Workflows automatisiert und Datenmodelle für Entscheidungen vorbereitet.",
+        },
+        {
+          title: "Business Intelligence und Visualisierung",
+          description: "Aussagekräftige Dashboards und Reports in Looker Studio erstellt, Kennzahlen visualisiert und datengestützte Empfehlungen abgeleitet.",
+        },
+        {
+          title: "Stakeholder Kommunikation und Best Practices",
+          description: "Ergebnisse klar präsentiert, Handlungsempfehlungen formuliert und Cloud-Standards für Sicherheit, Governance und Kostenoptimierung eingehalten.",
+        },
+      ],
+    },
+    {
       school: "Hochschule Flensburg",
       href: "https://hs-flensburg.de",
       degree: "B.Sc. Medieninformatik, Abschlussnote: 1.8",
