@@ -32,7 +32,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
   };
 
   return (
-    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
+    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
       <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning>
         <div className="flex-none">
           <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
@@ -44,9 +44,9 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
 
       <div className="block cursor-pointer" onClick={handleClick}>
         <div className="flex-grow ml-4 items-center flex-col group">
-          <CardHeader className="">
-            <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+          <CardHeader>
+            <div className="flex items-center justify-between gap-x-2 ">
+              <h3 className="inline-flex items-center justify-center font-semibold leading-non text-base">
                 {title}
                 {badges && (
                   <span className="inline-flex gap-x-1">
