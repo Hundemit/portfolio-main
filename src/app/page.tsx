@@ -40,7 +40,7 @@ export default async function Page() {
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
-              <Avatar className="size-28 border">
+              <Avatar className="size-28 border hover:rotate-12 hover:scale-110 transition-all duration-300 ease-out">
                 <AvatarImage className="object-cover" alt={DATA.personal.name} src={DATA.personal.avatarUrl} />
                 <AvatarFallback>{DATA.personal.initials}</AvatarFallback>
               </Avatar>
@@ -58,7 +58,7 @@ export default async function Page() {
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <Link href="/CV Jan Hindemit.pdf" download>
-            <Button variant="outline" className="mt-4 w-full">
+            <Button variant="outline" className="mt-4 w-full hover:-translate-y-1 transition-all duration-300 ease-out">
               <ArrowDownToLine className="size-4" />
               <span>Lebenslauf</span>
             </Button>
