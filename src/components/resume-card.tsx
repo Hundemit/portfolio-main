@@ -22,8 +22,9 @@ interface ResumeCardProps {
     title: string;
     description: string;
   }[];
+  previewUrl?: string;
 }
-export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description }: ResumeCardProps) => {
+export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description, previewUrl }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleClick = () => {
@@ -36,12 +37,21 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
     <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
       {/* <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning> */}
       <div className="flex-none">
-        <LinkPreview url={href || "#"} className="font-bold ">
-          <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
-            <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
-            <AvatarFallback>{altText[0]}</AvatarFallback>
-          </Avatar>
-        </LinkPreview>
+        {previewUrl ? (
+          <LinkPreview url={href || "#"} imageSrc={previewUrl} isStatic={true} isLinkTarget={true} className="font-bold ">
+            <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
+              <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+              <AvatarFallback>{altText[0]}</AvatarFallback>
+            </Avatar>
+          </LinkPreview>
+        ) : (
+          <LinkPreview url={href || "#"} className="font-bold ">
+            <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
+              <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+              <AvatarFallback>{altText[0]}</AvatarFallback>
+            </Avatar>
+          </LinkPreview>
+        )}
       </div>
       {/* </Link> */}
 

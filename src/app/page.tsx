@@ -78,6 +78,7 @@ export default async function Page() {
                 href={work.href}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+                previewUrl={work.previewUrl}
               />
             </BlurFade>
           ))}
@@ -99,6 +100,7 @@ export default async function Page() {
                 subtitle={education.degree}
                 period={`${education.start} - ${education.end}`}
                 description={education.description}
+                previewUrl={education.previewUrl}
               />
             </BlurFade>
           ))}

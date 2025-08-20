@@ -6,6 +6,7 @@ import React from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type LinkPreviewProps = {
   children: React.ReactNode;
@@ -15,9 +16,10 @@ type LinkPreviewProps = {
   height?: number;
   quality?: number;
   layout?: string;
+  isLinkTarget?: boolean;
 } & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
 
-export const LinkPreview = ({ children, url, className, width = 200, height = 125, quality = 50, layout = "fixed", isStatic = false, imageSrc = "" }: LinkPreviewProps) => {
+export const LinkPreview = ({ children, url, className, width = 200, height = 125, quality = 50, layout = "fixed", isStatic = false, imageSrc = "", isLinkTarget = false }: LinkPreviewProps) => {
   let src;
   if (!isStatic) {
     const params = encode({
@@ -25,11 +27,11 @@ export const LinkPreview = ({ children, url, className, width = 200, height = 12
       screenshot: true,
       meta: false,
       embed: "screenshot.url",
-      colorScheme: "dark",
-      "viewport.isMobile": true,
+      colorScheme: "light",
+      "viewport.isMobile": false,
       "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
+      "viewport.width": width * 1.5,
+      "viewport.height": height * 1.5,
     });
     src = `https://api.microlink.io/?${params}`;
   } else {
@@ -70,8 +72,10 @@ export const LinkPreview = ({ children, url, className, width = 200, height = 12
         onOpenChange={(open) => {
           setOpen(open);
         }}>
-        <HoverCardPrimitive.Trigger target="_blank" onMouseMove={handleMouseMove} className={cn("text-black dark:text-white", className)} href={url}>
-          {children}
+        <HoverCardPrimitive.Trigger asChild target={isLinkTarget ? "_self" : "_blank"} onMouseMove={handleMouseMove} className={cn("text-black dark:text-white", className)} href={url}>
+          <Link href={url} target={isLinkTarget ? "_self" : "_blank"}>
+            {children}
+          </Link>
         </HoverCardPrimitive.Trigger>
 
         <HoverCardPrimitive.Content className="[transform-origin:var(--radix-hover-card-content-transform-origin)]" side="top" align="center" sideOffset={10}>
@@ -96,7 +100,7 @@ export const LinkPreview = ({ children, url, className, width = 200, height = 12
                 }}>
                 <a
                   href={url}
-                  target="_blank"
+                  target={isLinkTarget ? "_self" : "_blank"}
                   className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}>
                   <img src={isStatic ? imageSrc : src} width={width} height={height} className="rounded-lg" alt="preview image" />
