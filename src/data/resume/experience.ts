@@ -2,7 +2,6 @@
 interface WorkExperience {
   company: string;
   href: string;
-  badges: string[];
   location: string;
   title: string;
   logoUrl: string;
@@ -21,7 +20,6 @@ interface Education {
   logoUrl: string;
   start: string;
   end: string;
-  badges: string[];
   description: {
     title: string;
     description: string;
@@ -33,7 +31,6 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
     {
       company: "Projekte im Bereich Web & Medien",
       href: "/blog",
-      badges: [],
       location: "Für Kunden und Eigenprojekte",
       title: "Für Kunden und Eigenprojekte",
       logoUrl: "/workexperience/emojilaptop.png",
@@ -54,7 +51,6 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
     {
       company: "GYFF",
       href: "https://www.linkedin.com/company/gyff/",
-      badges: [],
       location: "Flensburg",
       title: "Freelancer Webentwickler & Designer",
       logoUrl: "/workexperience/gyff-logo.jpg",
@@ -102,7 +98,6 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
       logoUrl: "/education/hochschuleflensburg.png",
       start: "September 2018",
       end: "Juni 2025",
-      badges: ["B.Sc. Medieninformatik"],
       description: [
         {
           title: "Programmierung & Technik",
@@ -122,7 +117,6 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
       logoUrl: "/education/Google Zertifikat.png",
       start: "November 2024",
       end: "September 2024",
-      badges: ["Google Cloud Data Analytics"],
       description: [
         {
           title: "Cloud Datenanalyse",

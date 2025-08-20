@@ -3,6 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
@@ -33,14 +34,16 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
 
   return (
     <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
-      <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning>
-        <div className="flex-none">
+      {/* <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning> */}
+      <div className="flex-none">
+        <LinkPreview url={href || "#"} className="font-bold ">
           <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
             <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
-        </div>
-      </Link>
+        </LinkPreview>
+      </div>
+      {/* </Link> */}
 
       <div className="block cursor-pointer" onClick={handleClick}>
         <div className="flex-grow ml-4 items-center flex-col group">
@@ -51,7 +54,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
                 {badges && (
                   <span className="inline-flex gap-x-1">
                     {badges.map((badge, index) => (
-                      <Badge variant="secondary" className="align-middle text-xs" key={index}>
+                      <Badge variant="secondary" className="align-middle text-xs bg-black text-white" key={index}>
                         {badge}
                       </Badge>
                     ))}

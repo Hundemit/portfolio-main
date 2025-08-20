@@ -1,5 +1,4 @@
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Marquee } from "@/components/magicui/marquee";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { ProjectCard } from "@/components/project-card";
@@ -7,13 +6,11 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { FlipWords } from "@/components/ui/flip-words";
-import { ClientOnly } from "@/components/ui/client-only";
 import { getPostsByNames } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
-import { ArrowDownToLine, BookMarkedIcon, FileDown } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Button } from "@/components/ui/button";
 
 const BLUR_FADE_DELAY = 0.04;
