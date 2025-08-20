@@ -26,7 +26,7 @@ export default async function Page() {
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
                 <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
-                  {`Hallo,  i'm ${DATA.personal.name.split(" ")[0]}✌️`}
+                  {`Hello,  i'm ${DATA.personal.name.split(" ")[0]}✌️`}
                 </SparklesText>
               </BlurFade>
 

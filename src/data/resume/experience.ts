@@ -33,7 +33,7 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
     {
       company: "Projekte im Bereich Web & Medien",
       href: "/blog",
-      previewUrl: "/workexperience/blogScreenshot.png",
+      previewUrl: "@/workexperience/blogScreenshot.png",
       location: "Für Kunden und Eigenprojekte",
       title: "Für Kunden und Eigenprojekte",
       logoUrl: "/workexperience/emojilaptop.png",
