@@ -66,7 +66,6 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
     {
       company: "Northern Lights GmbH",
       href: "https://nl-it-consulting.de/",
-      badges: [],
       location: "Flensburg",
       title: "Frontend-Entwickler / UI/UX-Designer",
       logoUrl: "/workexperience/northernlights.png",
