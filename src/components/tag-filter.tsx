@@ -25,7 +25,7 @@ export function TagFilter({ tags, selectedTag, tagCounts }: TagFilterProps) {
 
   const DesktopTagFilter = () => (
     <div className="hidden md:flex flex-wrap gap-2">
-      {tags.map((tag, id) => (
+      {tags.map((tag) => (
         <button
           key={tag}
           onClick={() => handleTagClick(tag)}
@@ -79,7 +79,10 @@ export function TagFilter({ tags, selectedTag, tagCounts }: TagFilterProps) {
 
   return (
     <>
-      <DesktopTagFilter />
+      <BlurFade delay={0.04 * 5}>
+        <DesktopTagFilter />
+      </BlurFade>
+
       <MobileTagFilter />
     </>
   );

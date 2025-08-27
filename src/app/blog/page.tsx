@@ -31,10 +31,8 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
   return (
     <>
-      <div className="px-6">
-        <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <TagFilter tags={allTags} selectedTag={selectedTag} tagCounts={tagCounts} />
-        </BlurFade>
+      <div className="mx-6">
+        <TagFilter tags={allTags} selectedTag={selectedTag} tagCounts={tagCounts} />
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-4 px-6">
         {filteredProjects.map((project, id) => (
