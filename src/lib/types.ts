@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+// Metadata for the blog posts
 export type Metadata = {
   title: string;
   publishedAt: string;
@@ -11,6 +12,7 @@ export type Metadata = {
   tags: string[];
   links?: ProjectLink[];
   video?: string;
+  typeofBlogPost: string;
 };
 
 export interface ProjectLink {

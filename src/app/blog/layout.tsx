@@ -9,12 +9,11 @@ export const metadata = {
   description: "My thoughts on software development, life, and more.",
 };
 
-const BLUR_FADE_DELAY = 0.04;
-
 export default async function BlogPageLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="mt-12 mb-24 sm:my-24 duration-1000">
       <ProjectsBreadcrumb />
+
       {children}
     </main>
   );
