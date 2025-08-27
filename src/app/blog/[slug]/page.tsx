@@ -1,16 +1,13 @@
 import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { formatDate } from "@/lib/utils";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BlurFade from "@/components/magicui/blur-fade";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbPage, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbList } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import { metadata } from "../page";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -19,42 +16,7 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{
-    slug: string;
-  }>;
-}): Promise<Metadata | undefined> {
-  const { slug } = await params;
-  let post = await getPost(slug);
-
-  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
-  let ogImage = image ? `${DATA.personal.url}${image}` : `${DATA.personal.url}/og?title=${title}`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      publishedTime,
-      url: `${DATA.personal.url}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
-}
+export { metadata };
 
 export default async function Blog({
   params,
@@ -101,7 +63,7 @@ export default async function Blog({
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
         <div className="flex flex-wrap gap-1 mb-8">
-          {post.metadata.technologies.map((skill, id) => (
+          {post.metadata.tags.map((skill, id) => (
             <Badge className="h-fit" key={skill}>
               {skill}
             </Badge>

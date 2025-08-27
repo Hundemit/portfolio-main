@@ -32,7 +32,7 @@ export default async function Page() {
 
               <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
                 <div suppressHydrationWarning>
-                  <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={Array.from(DATA.personal.description)} />
+                  <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={[...DATA.personal.description]} />
                 </div>
               </BlurFade>
             </div>
@@ -151,7 +151,7 @@ export default async function Page() {
                       title={project.metadata.title}
                       description={project.metadata.description}
                       dates={project.metadata.dates}
-                      tags={project.metadata.technologies}
+                      tags={project.metadata.tags}
                       image={project.metadata.image}
                       video={project.metadata.video}
                       links={project.metadata.links}

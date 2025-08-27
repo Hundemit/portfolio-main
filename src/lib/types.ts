@@ -8,7 +8,7 @@ export type Metadata = {
   dates: string;
   active: boolean;
   description: string;
-  technologies: string[];
+  tags: string[];
   links?: ProjectLink[];
   video?: string;
 };

@@ -85,8 +85,15 @@ interface SparklesTextProps {
 
 export const SparklesText: React.FC<SparklesTextProps> = ({ children, colors = { first: "#9E7AFF", second: "#FE8BBB" }, className, sparklesCount = 10, ...props }) => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const generateStar = (): Sparkle => {
       const starX = `${Math.random() * 100}%`;
       const starY = `${Math.random() * 100}%`;
@@ -119,7 +126,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({ children, colors = {
     const interval = setInterval(updateStars, 100);
 
     return () => clearInterval(interval);
-  }, [colors.first, colors.second, sparklesCount]);
+  }, [colors.first, colors.second, sparklesCount, isMounted]);
 
   return (
     <div
