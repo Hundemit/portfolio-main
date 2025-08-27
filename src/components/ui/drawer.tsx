@@ -74,7 +74,7 @@ export function DrawerContent({ children, className }: DrawerContentProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/50 z-50"
+            className="fixed inset-0 dark:bg-white/20 bg-black/20 z-50"
             onClick={() => setIsOpen(false)}
           />
 
