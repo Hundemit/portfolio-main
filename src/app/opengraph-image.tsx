@@ -63,41 +63,60 @@ const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     backgroundColor: "white",
-    padding: "40px",
+    padding: "60px",
   },
   container: {
     height: "100%",
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    border: "4px solid black",
-    padding: "60px",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
+  logo: {
+    width: "80px",
+    height: "80px",
+    marginBottom: "40px",
   },
   title: {
-    fontSize: "64px",
+    fontSize: "56px",
     color: "black",
-    marginBottom: "10px",
-    textAlign: "center",
+    marginBottom: "24px",
+    textAlign: "left",
     fontFamily: "Inter",
-    fontWeight: "600",
-    letterSpacing: "0.5px",
+    fontWeight: "700",
+    lineHeight: "1.2",
+    maxWidth: "900px",
   },
   description: {
-    fontSize: "28px",
+    fontSize: "24px",
     color: "black",
-    textAlign: "center",
+    textAlign: "left",
     maxWidth: "800px",
     fontFamily: "Inter",
-    fontWeight: "500",
-    letterSpacing: "0.5px",
-    border: "3px solid black",
-    padding: "10px 15px",
-    borderRadius: "100px",
+    fontWeight: "400",
+    lineHeight: "1.5",
+    marginBottom: "40px",
+  },
+  authorInfo: {
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+  },
+  authorAvatar: {
+    width: "32px",
+    height: "32px",
+    borderRadius: "50%",
+    backgroundColor: "#f3f4f6",
+  },
+  authorText: {
+    fontSize: "16px",
+    color: "#6b7280",
+    fontFamily: "Inter",
+    fontWeight: "400",
   },
 } as const;
 
@@ -113,9 +132,13 @@ export default async function Image() {
             fontFamily: assetData ? "Inter" : "system-ui",
           }}>
           <div style={styles.container}>
-            <img src={assetData?.logoBase64 || "/favicon.ico"} alt="Jan Hindemit Logo" width={100} height={100} />
+            <img src={assetData?.logoBase64 || "/favicon.ico"} alt="Jan Hindemit Logo" style={styles.logo} />
             <h1 style={styles.title}>Jan Hindemit</h1>
             <p style={styles.description}>Softwareentwickler & UI/UX Designer</p>
+            <div style={styles.authorInfo}>
+              <div style={styles.authorAvatar}></div>
+              <span style={styles.authorText}>Jan Hindemit • Portfolio</span>
+            </div>
           </div>
         </div>
       ),

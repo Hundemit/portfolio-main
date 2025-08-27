@@ -3,11 +3,6 @@ import { ProjectCard } from "@/components/project-card";
 import { getBlogPosts } from "@/data/blog";
 import { TagFilter } from "@/components/tag-filter";
 
-export const metadata = {
-  title: "Blog",
-  description: "My thoughts on software development, life, and more.",
-};
-
 const BLUR_FADE_DELAY = 0.04;
 
 export default async function BlogPage({ searchParams }: { searchParams: Promise<{ tag?: string }> }) {

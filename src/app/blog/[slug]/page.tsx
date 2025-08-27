@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { metadata } from "../page";
+import { generateMetadata } from "./metadata";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export { metadata };
+export { generateMetadata };
 
 export default async function Blog({
   params,

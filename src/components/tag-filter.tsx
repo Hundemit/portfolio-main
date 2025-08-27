@@ -3,6 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerBody } from "@/components/ui/drawer";
+import BlurFade from "./magicui/blur-fade";
 
 interface TagFilterProps {
   tags: string[];
@@ -24,23 +25,25 @@ export function TagFilter({ tags, selectedTag, tagCounts }: TagFilterProps) {
 
   const DesktopTagFilter = () => (
     <div className="hidden md:flex flex-wrap gap-2">
-      {tags.map((tag) => (
-        <button
-          key={tag}
-          onClick={() => handleTagClick(tag)}
-          className={`h-8 flex items-center px-1 pl-3 rounded-lg cursor-pointer border text-sm transition-colors ${
-            selectedTag === tag ? "border-primary bg-primary text-primary-foreground" : "border-border hover:bg-muted"
-          }`}>
-          <span>{tag}</span>
-          {tagCounts?.[tag] && (
-            <span
-              className={`ml-2 text-xs border rounded-md h-6 min-w-6 font-medium flex items-center justify-center ${
-                selectedTag === tag ? "border-border/40 dark:border-primary-foreground bg-background text-primary" : "border-border dark:border-border"
-              }`}>
-              {tagCounts[tag]}
-            </span>
-          )}
-        </button>
+      {tags.map((tag, id) => (
+        <BlurFade key={tag} delay={0.04 * 5 + id * 0.05}>
+          <button
+            key={tag}
+            onClick={() => handleTagClick(tag)}
+            className={`h-8 flex items-center px-1 pl-3 rounded-lg cursor-pointer border text-sm transition-colors ${
+              selectedTag === tag ? "border-primary bg-primary text-primary-foreground" : "border-border hover:bg-muted"
+            }`}>
+            <span>{tag}</span>
+            {tagCounts?.[tag] && (
+              <span
+                className={`ml-2 text-xs border rounded-md h-6 min-w-6 font-medium flex items-center justify-center ${
+                  selectedTag === tag ? "border-border/40 dark:border-primary-foreground bg-background text-primary" : "border-border dark:border-border"
+                }`}>
+                {tagCounts[tag]}
+              </span>
+            )}
+          </button>
+        </BlurFade>
       ))}
     </div>
   );
