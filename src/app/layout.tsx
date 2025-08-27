@@ -5,14 +5,14 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { Particles } from "@/components/magicui/particles";
 import { Analytics } from "@vercel/analytics/react";
-import { generateMetadata } from "@/app/blog/[slug]/metadata";
+import { metadata } from "@/app/metadata";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export { generateMetadata };
+export { metadata };
 
 export default function RootLayout({
   children,
