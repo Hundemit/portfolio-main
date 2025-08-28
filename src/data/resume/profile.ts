@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { FaDiscord, FaXTwitter } from "react-icons/fa6";
 
 export const PROFILE = {
   name: "Jan Hindemit",
@@ -7,7 +8,7 @@ export const PROFILE = {
   location: "Trappenkamp, DE",
   locationLink: "https://www.google.com/maps/place/trappenkamp",
 
-  description: ["Softwareentwickler", "UI/UX Designer", "Frontend Entwickler", "Fullstack Entwickler"],
+  description: ["Ich entwickle gerne einfache und nützliche Software.", "Ich finde gerne clevere Lösungen für schwierige Aufgaben.", "Mir sind guter Code und Teamarbeit wichtig."],
 
   metaKeywords: [
     "Jan Hindemit",
@@ -60,10 +61,22 @@ export const PROFILE = {
       navbar: true,
     },
     email: {
-      name: "Send Email",
+      name: "Mail",
       url: "mailto:janhindemit1@gmail.com",
       icon: Mail,
       navbar: true,
+    },
+    twitter: {
+      name: "Twitter",
+      url: "https://x.com/hundemit",
+      icon: FaXTwitter,
+      navbar: false,
+    },
+    discord: {
+      name: "Discord",
+      url: "https://discord.com/users/hundemit",
+      icon: FaDiscord,
+      navbar: false,
     },
   },
 } as const;

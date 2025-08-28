@@ -5,13 +5,14 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+
 import { FlipWords } from "@/components/ui/flip-words";
 import { getPostsByNames } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
 import { ArrowDownToLine } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { Button } from "@/components/ui/button";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -19,7 +20,7 @@ export default async function Page() {
   const projects = await getPostsByNames(["pokedex-next", "google-cloud-data-analytics-zertifikat", "gyff", "vitepress"]);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10 px-6 sm:my-24 my-12 duration-1000" suppressHydrationWarning>
+    <main className="flex flex-col min-h-[100dvh] space-y-10 px-6 sm:my-24 my-12 duration-1000">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -31,7 +32,7 @@ export default async function Page() {
               </BlurFade>
 
               <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
-                <div suppressHydrationWarning>
+                <div>
                   <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={[...DATA.personal.description]} />
                 </div>
               </BlurFade>
@@ -55,7 +56,7 @@ export default async function Page() {
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <Link href="/CV Jan Hindemit.pdf" download>
-            <Button variant="outline" className="mt-4 w-full hover:-translate-y-1 transition-all duration-300 ease-out">
+            <Button variant="outline" className="mt-4 w-full hover:scale-105 transition-all duration-300 ease-out">
               <ArrowDownToLine className="size-4" />
               <span>Lebenslauf</span>
             </Button>
@@ -129,7 +130,7 @@ export default async function Page() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Schau dir meine neuesten{" "}
-                  <Link href="/blog" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 underline transition-all duration-1000 ease-out" suppressHydrationWarning>
+                  <Link href="/blog" className="inline-flex items-center cursor-pointer gap-2 hover:scale-105 underline transition-all duration-1000 ease-out">
                     Projekte
                   </Link>{" "}
                   an.
@@ -168,10 +169,22 @@ export default async function Page() {
         </div>
       </section>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-24">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pt-24 pb-12">
           <BlurFade delay={BLUR_FADE_DELAY * 42}>
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nimm Kontakt auf.</h2>
+
+              <div className="flex flex-wrap gap-2 items-center justify-center">
+                {Object.entries(DATA.personal.social).map(([name, social]) => (
+                  <Button variant="outline" asChild key={name} className="hover:scale-105 transition-all duration-300 ease-out">
+                    <Link target="_blank" href={social.url} aria-label={social.name}>
+                      <social.icon className="size-4 " />
+                      <span>{social.name}</span>
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Willst du mit mir sprechen? Schreibe mir einfach eine Nachricht und ich werde mich so schnell wie möglich melden.
               </p>

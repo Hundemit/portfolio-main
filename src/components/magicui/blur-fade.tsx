@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface BlurFadeProps {
   children: React.ReactNode;
@@ -19,13 +19,25 @@ interface BlurFadeProps {
 }
 const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOffset = 6, inView = false, inViewMargin = "-50px", blur = "6px" }: BlurFadeProps) => {
   const ref = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin as any });
   const isInView = !inView || inViewResult;
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const defaultVariants: Variants = {
     hidden: { y: 2 * yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: 0, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
+
+  // Don't render animations until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <AnimatePresence>
       <motion.div
@@ -39,7 +51,6 @@ const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOf
           duration,
           ease: "easeOut",
         }}
-        suppressHydrationWarning
         className={className}>
         {children}
       </motion.div>
