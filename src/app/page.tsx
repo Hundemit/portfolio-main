@@ -61,32 +61,34 @@ export default async function Page() {
                   className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                 />
                 <img
-                  src="/me-images/ice.png"
-                  alt="Ice"
+                  src="/me-images/mirror.png"
+                  alt="Mirror"
                   className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                 />
                 <img
-                  src="/me-images/mirror.png"
-                  alt="Mirror"
+                  src="/me-images/ice.png"
+                  alt="Ice"
                   className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                 />
               </Marquee>
               <Marquee reverse className="py-2" style={{ "--duration": "40s" } as React.CSSProperties}>
                 <img
+                  src="/me-images/aqua.png"
+                  alt="Family Beach"
+                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
                   src="/me-images/bike.png"
                   alt="Bike"
                   className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                 />
+
                 <img
                   src="/me-images/grill.png"
                   alt="Grill"
                   className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                 />
-                <img
-                  src="/me-images/setup.png"
-                  alt="Setup"
-                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
-                />
+
                 <img
                   src="/me-images/famliy-beach.png"
                   alt="Family Beach"
