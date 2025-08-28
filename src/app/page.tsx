@@ -6,7 +6,6 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
 import { FlipWords } from "@/components/ui/flip-words";
 import { getPostsByNames } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
@@ -20,7 +19,7 @@ export default async function Page() {
   const projects = await getPostsByNames(["pokedex-next", "google-cloud-data-analytics-zertifikat", "gyff", "vitepress"]);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10 px-6 sm:my-24 my-12 duration-1000">
+    <main className="flex flex-col min-h-[100dvh] sm:space-y-10 space-y-6 px-6 sm:my-24 my-12 duration-1000">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -46,8 +45,61 @@ export default async function Page() {
           </div>
         </div>
       </section>
+      <section id="images">
+        <div className="w-full">
+          <BlurFade delay={BLUR_FADE_DELAY * 41}>
+            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden ">
+              <Marquee className="py-2" style={{ "--duration": "40s" } as React.CSSProperties}>
+                <img
+                  src="/me-images/beach.png"
+                  alt="Beach"
+                  className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/zurich.png"
+                  alt="Beach"
+                  className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/ice.png"
+                  alt="Ice"
+                  className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/mirror.png"
+                  alt="Mirror"
+                  className="object-cover h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+              </Marquee>
+              <Marquee reverse className="py-2" style={{ "--duration": "40s" } as React.CSSProperties}>
+                <img
+                  src="/me-images/bike.png"
+                  alt="Bike"
+                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/grill.png"
+                  alt="Grill"
+                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/setup.png"
+                  alt="Setup"
+                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+                <img
+                  src="/me-images/famliy-beach.png"
+                  alt="Family Beach"
+                  className="object-cover rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
+                />
+              </Marquee>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
       <section id="about">
-         
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">Über mich</h2>
         </BlurFade>
@@ -123,8 +175,8 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <section id="projects">
-        <div className="w-full py-16">
+      <section id="projects" className="py-16">
+        <div className="w-full ">
           <BlurFade delay={BLUR_FADE_DELAY * 40}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -168,8 +220,8 @@ export default async function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pt-24 pb-12">
+      <section id="contact" className="sm:pt-24 pt-12 pb-12">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 42}>
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nimm Kontakt auf.</h2>

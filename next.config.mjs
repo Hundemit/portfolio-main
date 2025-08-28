@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: false,
     domains: [
       "api.microlink.io", // Microlink Image Preview
     ],
