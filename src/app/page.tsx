@@ -25,20 +25,21 @@ export default async function Page() {
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
-                <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none duration-1000">
-                  {`Hello,  i'm ${DATA.personal.name.split(" ")[0]}✌️`}
+                <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none duration-1000">
+                  {`${DATA.personal.name}`}
+                  <span className="inline-block animate-wiggle-more animate-infinite animate-duration-[5000ms] animate-ease-in-out">✌️</span>
                 </SparklesText>
               </BlurFade>
 
               <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
-                <div>
+                <div id="description" className="h-14">
                   <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={[...DATA.personal.description]} />
                 </div>
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
               <Avatar className="size-28 border hover:rotate-12 hover:scale-110 transition-all duration-300 ease-out">
-                <AvatarImage className="object-cover" alt={DATA.personal.name} src={DATA.personal.avatarUrl} />
+                <AvatarImage className="object-cover select-none pointer-events-none" alt={DATA.personal.name} src={DATA.personal.avatarUrl} />
                 <AvatarFallback>{DATA.personal.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
@@ -168,10 +169,10 @@ export default async function Page() {
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge className="hover:-translate-y-1 transition-all duration-300 ease-out" key={skill}>
-                  {skill}
-                </Badge>
+              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                <Link href={skill.url} target="_blank">
+                  <Badge className="hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer">{skill.name}</Badge>
+                </Link>
               </BlurFade>
             ))}
           </div>

@@ -42,8 +42,10 @@ export const PROFILE = {
     "Figma Prototyping",
     "Cloud Data Analytics",
   ],
+
   summary:
-    "Ich habe einen Bachelor in [Medieninformatik](/#education) und praktische Erfahrung als UI/UX-Designer und Frontend-Entwickler gesammelt. Während meines Studiums und in verschiedenen Projekten entwickelte ich responsive Webanwendungen mit [React, Angular und Tailwind CSS](/#projects). Dabei arbeitete ich eng mit Product Ownern zusammen, setzte Prototypen in [Figma](https://www.figma.com) um und baute Systeme mit klarer Code-Struktur, Wiederverwendbarkeit und Fokus auf Usability. Aktuell arbeite ich an eigenen [Projekten](/#projects), bei denen ich Design, technische Umsetzung und Produktstrategie eigenständig verantworte.",
+    "Während meines Informatikstudiums habe ich begonnen, eigene Projekte und für mich selbst umzusetzen. Zuvor arbeitete ich als Frontend-Entwickler und UI/UX-Designer bei der Northern Lights GmbH und später als Webdesigner für das FinTech-Startup GYFF. In meinen Projekten verbinde ich Design, Entwicklung und Produktstrategie, um Software zu schaffen, die gerne genutzt wird.",
+
   avatarUrl: "/me.png",
   email: "janhindemit1@gmail.com",
   tel: "+1627195588",
