@@ -48,7 +48,7 @@ export default async function Page() {
       </section>
       <section id="images">
         <div className="w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 41}>
+          <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden ">
               <Marquee className="py-2" style={{ "--duration": "40s" } as React.CSSProperties}>
                 <img
