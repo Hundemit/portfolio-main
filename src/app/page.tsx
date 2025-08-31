@@ -13,7 +13,7 @@ import { ArrowDownToLine } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.3;
 
 export default async function Page() {
   const projects = await getPostsByNames(["pokedex-next", "google-cloud-data-analytics-zertifikat", "gyff", "vitepress"]);
@@ -24,14 +24,14 @@ export default async function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
+              <BlurFade delay={BLUR_FADE_DELAY}>
                 <SparklesText colors={{ first: "#b0b0b0", second: "#444444" }} sparklesCount={5} className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none duration-1000">
                   {`${DATA.personal.name}`}
                   <span className="inline-block animate-wiggle-more animate-infinite animate-duration-[5000ms] animate-ease-in-out">✌️</span>
                 </SparklesText>
               </BlurFade>
 
-              <BlurFade delay={BLUR_FADE_DELAY + 0.1} yOffset={8}>
+              <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
                 <div id="description" className="h-14">
                   <FlipWords duration={8000} className="md:text-xl p-0 m-0" words={[...DATA.personal.description]} />
                 </div>
@@ -48,7 +48,7 @@ export default async function Page() {
       </section>
       <section id="images">
         <div className="w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 2}>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.3}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden ">
               <Marquee className="py-2" style={{ "--duration": "40s" } as React.CSSProperties}>
                 <img
@@ -103,13 +103,13 @@ export default async function Page() {
         </div>
       </section>
       <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+        <BlurFade delay={BLUR_FADE_DELAY + 0.4}>
           <h2 className="text-xl font-bold">Über mich</h2>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
+        <BlurFade delay={BLUR_FADE_DELAY + 0.5}>
           <Markdown className="prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert text-base">{DATA.personal.summary}</Markdown>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 5}>
+        <BlurFade delay={BLUR_FADE_DELAY + 0.6}>
           <Link href="/CV Jan Hindemit.pdf" download>
             <Button variant="outline" className="mt-4 w-full hover:scale-105 transition-all duration-300 ease-out">
               <ArrowDownToLine className="size-4" />
@@ -120,11 +120,11 @@ export default async function Page() {
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.7}>
             <h2 className="text-xl font-bold">Berufserfahrung</h2>
           </BlurFade>
           {DATA.experience.work.map((work, id) => (
-            <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+            <BlurFade key={work.company} delay={BLUR_FADE_DELAY + 0.8 + id * 0.05}>
               <ResumeCard
                 key={work.company}
                 logoUrl={work.logoUrl}
@@ -142,11 +142,11 @@ export default async function Page() {
       </section>
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.9}>
             <h2 className="text-xl font-bold">Ausbildung</h2>
           </BlurFade>
           {DATA.experience.education.map((education, id) => (
-            <BlurFade key={education.school} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
+            <BlurFade key={education.school} delay={BLUR_FADE_DELAY + 0.9 + id * 0.05}>
               <ResumeCard
                 key={education.school}
                 logoUrl={education.logoUrl}
@@ -164,12 +164,12 @@ export default async function Page() {
       </section>
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <BlurFade delay={BLUR_FADE_DELAY + 1.1}>
             <h2 className="text-xl font-bold">Techstack</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY + 1.2 + id * 0.05}>
                 <Link href={skill.url} target="_blank">
                   <Badge className="hover:-translate-y-1 transition-all duration-300 ease-out cursor-pointer">{skill.name}</Badge>
                 </Link>
@@ -180,7 +180,7 @@ export default async function Page() {
       </section>
       <section id="projects" className="py-16">
         <div className="w-full ">
-          <BlurFade delay={BLUR_FADE_DELAY * 40}>
+          <BlurFade delay={BLUR_FADE_DELAY + 1.5}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -197,7 +197,7 @@ export default async function Page() {
               </div>
             </div>
           </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 41}>
+          <BlurFade delay={BLUR_FADE_DELAY + 1.6}>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
               <Marquee className="py-8" style={{ "--duration": "40s" } as React.CSSProperties}>
                 {projects.map((project, id) => (
@@ -225,7 +225,7 @@ export default async function Page() {
       </section>
       <section id="contact" className="sm:pt-24 pt-12 pb-12">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 42}>
+          <BlurFade delay={BLUR_FADE_DELAY + 1.7}>
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nimm Kontakt auf.</h2>
 
