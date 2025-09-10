@@ -12,26 +12,6 @@ A modern, responsive portfolio built with Next.js 15, TypeScript, Tailwind CSS, 
 
 I'm Jan Hindemit, a passionate Frontend Developer and UI/UX Designer from Germany. With a Bachelor's in Media Informatics and practical experience in developing user-friendly web applications, I focus on clean code and innovative solutions.
 
-## ✨ Features
-
-- **Modern Stack:** Next.js 15, React 18, TypeScript, Tailwind CSS
-- **UI Components:** Shadcn/UI and Magic UI for beautiful interfaces
-- **Animations:** Framer Motion for smooth transitions
-- **Blog System:** MDX-based blog posts with syntax highlighting
-- **Responsive Design:** Optimized for all devices
-- **Dark/Light Mode:** Automatic theme switching
-- **SEO Optimized:** Meta tags and Open Graph support
-
-## 🛠️ Tech Stack
-
-- **Frontend:** Next.js 15, React 18, TypeScript
-- **Styling:** Tailwind CSS
-- **UI:** Shadcn/UI, Radix UI, Magic UI
-- **Animations:** Framer Motion
-- **Content:** MDX, Gray Matter
-- **Icons:** Lucide React
-- **Deployment:** Vercel
-
 ## 🚀 Getting Started
 
 1. **Clone the repository:**
@@ -52,6 +32,26 @@ I'm Jan Hindemit, a passionate Frontend Developer and UI/UX Designer from German
    ```bash
    npm run dev
    ```
+
+## ✨ Features
+
+- **Modern Stack:** Next.js 15, React 18, TypeScript, Tailwind CSS
+- **UI Components:** Shadcn/UI and Magic UI for beautiful interfaces
+- **Animations:** Framer Motion for smooth transitions
+- **Blog System:** MDX-based blog posts with syntax highlighting
+- **Responsive Design:** Optimized for all devices
+- **Dark/Light Mode:** Automatic theme switching
+- **SEO Optimized:** Meta tags and Open Graph support
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 15, React 18, TypeScript
+- **Styling:** Tailwind CSS
+- **UI:** Shadcn/UI, Radix UI, Magic UI
+- **Animations:** Framer Motion
+- **Content:** MDX, Gray Matter
+- **Icons:** Lucide React
+- **Deployment:** Vercel
 
 4. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
