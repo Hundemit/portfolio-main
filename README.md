@@ -1,47 +1,154 @@
 <div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
+<img alt="Jan Hindemit Portfolio" src="public/me.png" width="200" style="border-radius: 50%;">
 </div>
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+# Jan Hindemit - Portfolio
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+Ein modernes, responsives Portfolio, das mit Next.js 15, TypeScript, Tailwind CSS und Magic UI entwickelt wurde.
 
-# Features
+🌐 **Live Website:** [janhindemit.de](https://janhindemit.de)
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## Über mich
 
-# Getting Started Locally
+Ich bin Jan Hindemit, ein leidenschaftlicher Frontend-Entwickler und UI/UX-Designer aus Trappenkamp, Deutschland. Mit einem Bachelor in Medieninformatik und praktischer Erfahrung in der Entwicklung benutzerfreundlicher Webanwendungen, konzentriere ich mich auf sauberen Code und innovative Lösungen.
 
-1. Clone this repository to your local machine:
+## 🚀 Features
+
+- **Moderne Technologien:** Next.js 15, React 18, TypeScript, Tailwind CSS
+- **UI-Komponenten:** Shadcn/UI und Magic UI für ansprechende Benutzeroberflächen
+- **Animationen:** Framer Motion für flüssige Übergänge und Interaktionen
+- **Blog-System:** MDX-basierte Blog-Posts mit Syntax-Highlighting
+- **Responsive Design:** Optimiert für alle Geräte und Bildschirmgrößen
+- **Dark/Light Mode:** Automatischer Theme-Switch
+- **SEO-optimiert:** Meta-Tags und Open Graph für bessere Sichtbarkeit
+- **Performance:** Optimiert für schnelle Ladezeiten
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 15, React 18, TypeScript
+- **Styling:** Tailwind CSS, CSS Modules
+- **UI-Komponenten:** Shadcn/UI, Radix UI, Magic UI
+- **Animationen:** Framer Motion
+- **Content:** MDX, Gray Matter
+- **Icons:** Lucide React, React Icons
+- **Deployment:** Vercel
+
+## 📁 Projektstruktur
+
+```
+portfolio-main/
+├── content/                 # MDX Blog-Posts
+├── public/                  # Statische Assets
+│   ├── content/            # Projekt-Bilder
+│   ├── me-images/          # Persönliche Bilder
+│   └── workexperience/     # Berufserfahrung Assets
+├── src/
+│   ├── app/                # Next.js App Router
+│   ├── components/         # React Komponenten
+│   │   ├── magicui/       # Magic UI Komponenten
+│   │   └── ui/            # Shadcn/UI Komponenten
+│   ├── data/              # Daten und Konfiguration
+│   │   ├── blog.ts        # Blog-Funktionen
+│   │   └── resume/        # Lebenslauf-Daten
+│   └── lib/               # Utility-Funktionen
+└── tailwind.config.ts     # Tailwind Konfiguration
+```
+
+## 🚀 Lokale Entwicklung
+
+1. **Repository klonen:**
 
    ```bash
-   git clone https://github.com/dillionverma/portfolio
+   git clone https://github.com/hundemit/portfolio-main.git
+   cd portfolio-main
    ```
 
-2. Move to the cloned directory
+2. **Dependencies installieren:**
 
    ```bash
-   cd portfolio
-   ```
-
-3. Install dependencies:
-
-   ```bash
+   npm install
+   # oder
    pnpm install
    ```
 
-4. Start the local Server:
+3. **Entwicklungsserver starten:**
 
    ```bash
+   npm run dev
+   # oder
    pnpm dev
    ```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+4. **Browser öffnen:**
+   Öffne [http://localhost:3000](http://localhost:3000) in deinem Browser.
 
-# License
+## ⚙️ Konfiguration
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+Die wichtigsten Konfigurationsdateien:
+
+- **Persönliche Daten:** `src/data/resume/personal-info.ts`
+- **Projekte:** `src/data/resume/experience.ts`
+- **Skills:** `src/data/resume/skills.ts`
+- **Blog-Posts:** `content/*.mdx`
+
+## 📝 Blog-Posts hinzufügen
+
+1. Erstelle eine neue `.mdx` Datei im `content/` Verzeichnis
+2. Füge Frontmatter-Metadaten hinzu:
+
+   ```mdx
+   ---
+   title: "Mein neuer Blog-Post"
+   description: "Eine kurze Beschreibung"
+   date: "2024-01-01"
+   tags: ["React", "Next.js"]
+   ---
+
+   Dein Blog-Inhalt hier...
+   ```
+
+## 🎨 Anpassungen
+
+- **Farben:** Bearbeite `tailwind.config.ts` für Theme-Anpassungen
+- **Komponenten:** Passe Komponenten in `src/components/` an
+- **Styling:** Verwende Tailwind CSS Klassen für Styling
+- **Animationen:** Nutze Framer Motion für Animationen
+
+## 📱 Responsive Design
+
+Das Portfolio ist vollständig responsive und optimiert für:
+
+- 📱 Mobile Geräte (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktop (1024px+)
+- 🖥️ Large Screens (1440px+)
+
+## 🚀 Deployment
+
+Das Portfolio ist für Vercel optimiert:
+
+1. **Vercel CLI:**
+
+   ```bash
+   npm i -g vercel
+   vercel
+   ```
+
+2. **GitHub Integration:**
+   - Verbinde dein Repository mit Vercel
+   - Automatische Deployments bei Push
+
+## 📄 Lizenz
+
+Dieses Projekt steht unter der [MIT Lizenz](LICENSE).
+
+## 📞 Kontakt
+
+- **Website:** [janhindemit.de](https://janhindemit.de)
+- **Email:** [janhindemit1@gmail.com](mailto:janhindemit1@gmail.com)
+- **LinkedIn:** [Jan Hindemit](https://www.linkedin.com/in/jan-hindemit/)
+- **GitHub:** [@hundemit](https://github.com/hundemit)
+
+---
+
+⭐ **Gefällt dir das Portfolio?** Dann hinterlasse gerne einen Star! ⭐
