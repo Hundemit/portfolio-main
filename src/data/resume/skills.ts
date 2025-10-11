@@ -3,6 +3,7 @@ export const SKILLS = {
   skills: [
     { name: "HTML", url: "https://developer.mozilla.org/docs/Web/HTML" },
     { name: "CSS", url: "https://developer.mozilla.org/docs/Web/CSS" },
+    { name: "Next.js", url: "https://nextjs.org/" },
     { name: "React.js", url: "https://react.dev/" },
     { name: "TypeScript", url: "https://www.typescriptlang.org/" },
     { name: "Node.js", url: "https://nodejs.org/" },

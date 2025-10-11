@@ -44,7 +44,7 @@ export const PROFILE = {
   ],
 
   summary:
-    "Während meines Informatikstudiums habe ich begonnen, eigene Projekte und für mich selbst umzusetzen. Zuvor arbeitete ich als Frontend-Entwickler und UI/UX-Designer bei der Northern Lights GmbH und später als Webdesigner für das FinTech-Startup GYFF. In meinen Projekten verbinde ich Design, Entwicklung und Produktstrategie, um Software zu schaffen, die gerne genutzt wird.",
+    "Ich bin Fullstack Entwickler und UI/UX Designer aus Leidenschaft. Mein Ziel ist es, Anwendungen zu bauen, die technisch sauber und für Nutzer intuitiv sind. \n\n Bei der Northern Lights GmbH und dem FinTech-Startup GYFF habe ich gelernt, Design, Entwicklung und Produktstrategie zusammenzubringen. Ich lege Wert auf wartbaren Code, eine klare Produktvision – und manchmal hilft ein beherzter Druck auf Backspace, um bessere Software zu schaffen.",
 
   avatarUrl: "/me.png",
   email: "janhindemit1@gmail.com",

@@ -132,7 +132,7 @@ export default async function Page() {
             </h2>
           </BlurFade>
           <BlurFade className="opacity-0" delay={BLUR_FADE_DELAY + 0.5}>
-            <Markdown className="prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert text-base">{DATA.personal.summary}</Markdown>
+            <Markdown className="prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert text-base text-justify">{DATA.personal.summary}</Markdown>
           </BlurFade>
           <BlurFade className="opacity-0" delay={BLUR_FADE_DELAY + 0.6}>
             <Link href="/CV Jan Hindemit.pdf" download>
