@@ -8,7 +8,7 @@ export const PROFILE = {
   location: "Trappenkamp, DE",
   locationLink: "https://www.google.com/maps/place/trappenkamp",
 
-  description: ["Ich entwickle gerne einfache und nützliche Software.", "Ich finde gerne clevere Lösungen für schwierige Aufgaben.", "Mir sind guter Code und Teamarbeit wichtig."],
+  description: ["Ich entwickle einfache und nützliche Software.", "Ich finde gerne clevere Lösungen für schwierige Aufgaben.", "Mir sind guter Code und Teamarbeit wichtig."],
 
   metaKeywords: [
     "Jan Hindemit",

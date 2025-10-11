@@ -1,0 +1,14 @@
+# robots.txt für janhindemit.de
+# Erlaubt allen Suchmaschinen die Website zu crawlen
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://janhindemit.de/sitemap.xml
+
+# Blockiere spezifische Pfade (falls nötig)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+

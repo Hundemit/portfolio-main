@@ -2,6 +2,9 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { getBlogPosts } from "@/data/blog";
 import { TagFilter } from "@/components/tag-filter";
+import { metadata } from "./metadata";
+
+export { metadata };
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -31,6 +34,14 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
   return (
     <>
+      <BlurFade delay={BLUR_FADE_DELAY * 5}>
+        <section className="px-6">
+          <header className="mb-8">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-2">Blog & Projekte</h1>
+            <p className="text-muted-foreground text-base">Meine neuesten Webentwicklungs-Projekte mit React, Next.js und TypeScript - Von UI/UX Design bis zur vollständigen Implementierung</p>
+          </header>
+        </section>
+      </BlurFade>
       <div className="mx-6">
         <TagFilter tags={allTags} selectedTag={selectedTag} tagCounts={tagCounts} />
       </div>
