@@ -38,7 +38,7 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
       title: "Für Kunden und Eigenprojekte",
       logoUrl: "/workexperience/emojilaptop.png",
       start: "Juni 2023",
-      end: "Januar 2025",
+      end: "Heute",
       description: [
         {
           title: "Konzeption und Design",

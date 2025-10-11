@@ -34,7 +34,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
   };
 
   return (
-    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background", isExpanded ? "" : "sm:hover:-translate-y-0.5")}>
+    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background hover:bg-stone-100 p-1", isExpanded ? "bg-stone-100" : "sm:hover:-translate-y-0.5")}>
       {/* <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning> */}
       <div className="flex-none">
         {previewUrl ? (
