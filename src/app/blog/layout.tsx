@@ -9,7 +9,11 @@ export const metadata = {
   description: "My thoughts on software development, life, and more.",
 };
 
-export default async function BlogPageLayout({ children }: { children: React.ReactNode }) {
+export default async function BlogPageLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <main className="mt-12 mb-24 sm:my-24 duration-1000">
       <ProjectsBreadcrumb />
