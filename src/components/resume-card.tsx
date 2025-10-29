@@ -24,7 +24,17 @@ interface ResumeCardProps {
   }[];
   previewUrl?: string;
 }
-export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description, previewUrl }: ResumeCardProps) => {
+export const ResumeCard = ({
+  logoUrl,
+  altText,
+  title,
+  subtitle,
+  href,
+  badges,
+  period,
+  description,
+  previewUrl,
+}: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleClick = () => {
@@ -34,20 +44,41 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
   };
 
   return (
-    <Card className={cn("flex sm:translate-y-0 duration-300 ease-out group bg-background hover:bg-stone-100 p-1", isExpanded ? "bg-stone-100" : "sm:hover:-translate-y-0.5")}>
+    <Card
+      className={cn(
+        "flex sm:translate-y-0 duration-300 ease-out group bg-background hover:bg-stone-100 dark:hover:bg-stone-900 p-1 px-2",
+        isExpanded
+          ? "bg-stone-100 dark:bg-stone-900"
+          : "sm:hover:-translate-y-0.5"
+      )}
+    >
       {/* <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning> */}
       <div className="flex-none">
         {previewUrl ? (
-          <LinkPreview url={href || "#"} imageSrc={previewUrl} isStatic={true} isLinkTarget={true} className="font-bold ">
+          <LinkPreview
+            url={href || "#"}
+            imageSrc={previewUrl}
+            isStatic={true}
+            isLinkTarget={true}
+            className="font-bold "
+          >
             <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
-              <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+              <AvatarImage
+                src={logoUrl}
+                alt={altText}
+                className="object-contain"
+              />
               <AvatarFallback>{altText[0]}</AvatarFallback>
             </Avatar>
           </LinkPreview>
         ) : (
           <LinkPreview url={href || "#"} className="font-bold ">
             <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
-              <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+              <AvatarImage
+                src={logoUrl}
+                alt={altText}
+                className="object-contain"
+              />
               <AvatarFallback>{altText[0]}</AvatarFallback>
             </Avatar>
           </LinkPreview>
@@ -64,17 +95,26 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
                 {badges && (
                   <span className="inline-flex gap-x-1">
                     {badges.map((badge, index) => (
-                      <Badge variant="secondary" className="align-middle text-xs bg-black text-white" key={index}>
+                      <Badge
+                        variant="secondary"
+                        className="align-middle text-xs bg-black text-white"
+                        key={index}
+                      >
                         {badge}
                       </Badge>
                     ))}
                   </span>
                 )}
                 <ChevronRightIcon
-                  className={cn("size-4 ml-1 translate-x-0 transform transition-all duration-300 ease-out group-hover:translate-x-1", isExpanded ? "rotate-90 translate-x-1" : "rotate-0")}
+                  className={cn(
+                    "size-4 ml-1 translate-x-0 transform transition-all duration-300 ease-out group-hover:translate-x-1",
+                    isExpanded ? "rotate-90 translate-x-1" : "rotate-0"
+                  )}
                 />
               </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">{period}</div>
+              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+                {period}
+              </div>
             </div>
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
@@ -85,7 +125,8 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
                 opacity: isExpanded ? 1 : 0,
                 height: isExpanded ? "auto" : 0,
               }}
-              className="mt-2 text-xs sm:text-sm">
+              className="mt-2 text-xs sm:text-sm"
+            >
               {description.map((item, index) => (
                 <p className="mb-2" key={index}>
                   <b>{item.title}:</b> <br />

@@ -15,6 +15,8 @@ function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
+
+
 export async function markdownToHTML(markdown: string) {
   const p = await unified()
     .use(remarkParse)
@@ -34,7 +36,14 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getPost(slug: string) {
+
+export type Post = {
+  slug: string;
+  metadata: Metadata;
+  source: string;
+};
+
+export async function getPost(slug: string): Promise<Post> {
   const filePath = path.join("content", `${slug}.mdx`);
 
   try {
@@ -52,30 +61,24 @@ export async function getPost(slug: string) {
   }
 }
 
-export async function getPostsByNames(slugs: string[]) {
+export async function getPostsByNames(slugs: string[]): Promise<Post[]> {
   return Promise.all(
     slugs.map(async (s) => {
-      const { metadata, source, slug } = await getPost(s);
-      return { metadata, source, slug };
+      return await getPost(s);
     })
   );
 }
 
-async function getAllPosts(dir: string) {
+async function getAllPosts(dir: string): Promise<Post[]> {
   let mdxFiles = getMDXFiles(dir);
   return Promise.all(
     mdxFiles.map(async (file) => {
-      let slug = path.basename(file, path.extname(file));
-      let { metadata, source } = await getPost(slug);
-      return {
-        metadata,
-        slug,
-        source,
-      };
+      const slug = path.basename(file, path.extname(file));
+      return await getPost(slug);
     })
   );
 }
 
-export async function getBlogPosts() {
+export async function getBlogPosts(): Promise<Post[]> {
   return getAllPosts(path.join(process.cwd(), "content"));
 }

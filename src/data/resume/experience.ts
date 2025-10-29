@@ -31,6 +31,33 @@ interface Education {
 export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
   work: [
     {
+      company: "Nordi Connect",
+      href: "https://www.nordi-connect.de/",
+      previewUrl: "/workexperience/nordi-connect-preview.png",
+      location: "Trappenkamp",
+      title: "Selbstständiger",
+      logoUrl: "/workexperience/nordi-connect-logo.jpg",
+      start: "Juni 2025",
+      end: "Heute",
+      description: [
+        {
+          title: "KI-Telefonassistenz für Unternehmen",
+          description:
+            "Ich biete Unternehmen eine smarte KI-Telefonassistenz, die Anrufe professionell entgegennimmt und Fragen zuverlässig beantwortet.",
+        },
+        {
+          title: "Kunden beraten und unterstützen",
+          description:
+            "Ich berate Kund:innen individuell, um die bestmögliche Integration von KI-Telefonlösungen und Automatisierung in deren Unternehmensalltag zu erreichen.",
+        },
+        {
+          title: "Umsetzung der KI-Telefonassistenz",
+          description:
+            "Entwicklung, Einrichtung und kontinuierliche Optimierung der KI-Telefonassistenz – von der Aufnahme spezieller Anforderungen über individuelle Anpassungen bis zur zuverlässigen Integration in die betrieblichen Abläufe.",
+        },
+      ],
+    },
+    {
       company: "Projekte im Bereich Web & Medien",
       href: "/blog",
       previewUrl: "/workexperience/blogpreview.png",
@@ -47,7 +74,8 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
         },
         {
           title: "Entwicklung und technische Umsetzung",
-          description: "Eigene WordPress Themes und Blöcke gebaut, Tailwind CSS eingesetzt.",
+          description:
+            "Eigene WordPress Themes und Blöcke gebaut, Tailwind CSS eingesetzt.",
         },
       ],
     },
@@ -62,7 +90,8 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
       description: [
         {
           title: "Konzeption und Umsetzung",
-          description: "Kundenbriefings, Zieldefinition, Wireframes und Informationsarchitektur, Ausarbeitung von Styleguides und responsiven UI-Designs. Umsetzung mit WordPress.",
+          description:
+            "Kundenbriefings, Zieldefinition, Wireframes und Informationsarchitektur, Ausarbeitung von Styleguides und responsiven UI-Designs. Umsetzung mit WordPress.",
         },
       ],
     },
@@ -82,7 +111,8 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
         },
         {
           title: "Frontend-Entwicklung mit Angular/ TypeScript",
-          description: "Komponenten, Views und Formularlogik umgesetzt, responsive HTML/CSS gepflegt und Microservices/APIs angebunden.",
+          description:
+            "Komponenten, Views und Formularlogik umgesetzt, responsive HTML/CSS gepflegt und Microservices/APIs angebunden.",
         },
         {
           title: "Teamarbeit und Qualitätssicherung",
@@ -108,7 +138,8 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
         },
         {
           title: "Web- und App-Entwicklung",
-          description: "Responsive Oberflächen gebaut, Komponenten konzipiert, Datenbanken modelliert und Frontend mit Backend logisch verknüpft.",
+          description:
+            "Responsive Oberflächen gebaut, Komponenten konzipiert, Datenbanken modelliert und Frontend mit Backend logisch verknüpft.",
         },
       ],
     },
@@ -122,15 +153,18 @@ export const EXPERIENCE: { work: WorkExperience[]; education: Education[] } = {
       description: [
         {
           title: "Cloud Datenanalyse",
-          description: "Daten in der Google Cloud aufbereitet, bereinigt und mit SQL sowie BigQuery analysiert. ETL-Workflows automatisiert und Datenmodelle für Entscheidungen vorbereitet.",
+          description:
+            "Daten in der Google Cloud aufbereitet, bereinigt und mit SQL sowie BigQuery analysiert. ETL-Workflows automatisiert und Datenmodelle für Entscheidungen vorbereitet.",
         },
         {
           title: "Business Intelligence und Visualisierung",
-          description: "Aussagekräftige Dashboards und Reports in Looker Studio erstellt, Kennzahlen visualisiert und datengestützte Empfehlungen abgeleitet.",
+          description:
+            "Aussagekräftige Dashboards und Reports in Looker Studio erstellt, Kennzahlen visualisiert und datengestützte Empfehlungen abgeleitet.",
         },
         {
           title: "Stakeholder Kommunikation und Best Practices",
-          description: "Ergebnisse klar präsentiert, Handlungsempfehlungen formuliert und Cloud-Standards für Sicherheit, Governance und Kostenoptimierung eingehalten.",
+          description:
+            "Ergebnisse klar präsentiert, Handlungsempfehlungen formuliert und Cloud-Standards für Sicherheit, Governance und Kostenoptimierung eingehalten.",
         },
       ],
     },

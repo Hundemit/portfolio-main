@@ -10,7 +10,7 @@ export function ModeToggle({ className }: { className?: string }) {
   const { setTheme, theme } = useTheme();
 
   const renderIcon = () => {
-    switch (theme) {
+    switch (resolvedTheme) {
       case "light":
         return <SunIcon className="size-4" />;
       case "dark":
@@ -18,12 +18,20 @@ export function ModeToggle({ className }: { className?: string }) {
     }
   };
 
+  const { resolvedTheme } = useTheme();
   useEffect(() => {
-    console.log(theme);
-  }, [theme]);
+    console.log("theme", theme, "resolvedTheme", resolvedTheme);
+  }, [theme, resolvedTheme]);
 
   return (
-    <Button variant="ghost" type="button" size="icon" className={cn(className)} onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label="Toggle Theme">
+    <Button
+      variant="ghost"
+      type="button"
+      size="icon"
+      className={cn(className)}
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      aria-label="Toggle Theme"
+    >
       {renderIcon()}
     </Button>
   );

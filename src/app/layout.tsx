@@ -34,6 +34,11 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" lang="de" suppressHydrationWarning>
       <head>
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://tweakcn.com/live-preview.min.js"
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#000000" />
@@ -42,9 +47,21 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Jan Hindemit" />
       </head>
-      <body className={cn("relative min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto rounded-xl overflow-x-hidden ", fontSans.variable)} suppressHydrationWarning>
+      <body
+        className={cn(
+          "relative min-h-screen bg-background font-sans antialiased mx-auto rounded-xl overflow-x-hidden ",
+          fontSans.variable
+        )}
+        suppressHydrationWarning
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Particles className="hidden sm:block fixed left-0 inset-0 -z-10 h-screen w-screen" quantity={100} ease={80} color={"#b0b0b0"} refresh={true} />
+          <Particles
+            className="hidden sm:block fixed left-0 inset-0 -z-10 h-screen w-screen"
+            quantity={100}
+            ease={80}
+            color={"#b0b0b0"}
+            refresh={true}
+          />
           <div
             id="noise-background"
             className="rounded-3xl fixed inset-0 w-screen h-screen z-[100] pointer-events-none opacity-[0.04] [background-image:url('/background1.gif')] [background-repeat:repeat,no-repeat] [background-position:0_0,0_0] [background-size:auto,cover] "
