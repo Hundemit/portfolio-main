@@ -33,6 +33,7 @@ export default async function Page() {
     {
       src: "/me-images/beach.png",
       alt: "Jan Hindemit am Strand - Urlaub und Freizeit",
+      width: 72,
     },
     {
       src: "/me-images/zurich.png",
@@ -41,6 +42,7 @@ export default async function Page() {
     {
       src: "/me-images/mirror.png",
       alt: "Jan Hindemit Spiegelselfie - Portfolio Aufnahme",
+      width: 72,
     },
     {
       src: "/me-images/ice.png",
@@ -52,6 +54,7 @@ export default async function Page() {
     {
       src: "/me-images/aqua.png",
       alt: "Jan Hindemit im Schwimmbad - Entspannung",
+      width: 72,
     },
     {
       src: "/me-images/bike.png",
@@ -60,6 +63,7 @@ export default async function Page() {
     {
       src: "/me-images/grill.png",
       alt: "Jan Hindemit beim Grillen - Freizeit mit Freunden",
+      width: 72,
     },
     {
       src: "/me-images/famliy-beach.png",
@@ -127,7 +131,7 @@ export default async function Page() {
                       key={image.src}
                       src={image.src}
                       alt={image.alt}
-                      width={150}
+                      width={image.width || 150}
                       height={96}
                       className="object-cover w-fit h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                       loading="lazy"
@@ -144,7 +148,7 @@ export default async function Page() {
                       key={image.src}
                       src={image.src}
                       alt={image.alt}
-                      width={150}
+                      width={image.width || 150}
                       height={96}
                       className="object-cover w-fit h-24 rounded-md hover:scale-110 filter hover:grayscale-0 duration-300 transition-all ease-out select-none pointer-events-none"
                       loading="lazy"

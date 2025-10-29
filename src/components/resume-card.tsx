@@ -54,35 +54,23 @@ export const ResumeCard = ({
     >
       {/* <Link href={href || "#"} className="cursor-pointer" target={href === "/blog" ? "_self" : "_blank"} suppressHydrationWarning> */}
       <div className="flex-none">
-        {previewUrl ? (
-          <LinkPreview
-            url={href || "#"}
-            imageSrc={previewUrl}
-            isStatic={true}
-            isLinkTarget={true}
-            className="font-bold "
-          >
-            <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
-              <AvatarImage
-                src={logoUrl}
-                alt={altText}
-                className="object-contain"
-              />
-              <AvatarFallback>{altText[0]}</AvatarFallback>
-            </Avatar>
-          </LinkPreview>
-        ) : (
-          <LinkPreview url={href || "#"} className="font-bold ">
-            <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
-              <AvatarImage
-                src={logoUrl}
-                alt={altText}
-                className="object-contain"
-              />
-              <AvatarFallback>{altText[0]}</AvatarFallback>
-            </Avatar>
-          </LinkPreview>
-        )}
+        <LinkPreview
+          isLinkTarget={false}
+          url={href || "#"}
+          {...(previewUrl
+            ? { imageSrc: previewUrl, isStatic: true }
+            : { isStatic: false })}
+          className="font-bold"
+        >
+          <Avatar className="border dark:border-foreground size-12 m-auto bg-muted-background dark:bg-foreground hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out">
+            <AvatarImage
+              src={logoUrl}
+              alt={altText}
+              className="object-contain"
+            />
+            <AvatarFallback>{altText[0]}</AvatarFallback>
+          </Avatar>
+        </LinkPreview>
       </div>
       {/* </Link> */}
 
