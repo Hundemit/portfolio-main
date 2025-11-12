@@ -23,6 +23,7 @@ const BLUR_FADE_DELAY = 0.3;
 export default async function Page() {
   const projects = await getPostsByNames([
     "pokedex-next",
+    "nordi-rechno",
     "google-cloud-data-analytics-zertifikat",
     "gyff",
     "aga-gutachten",

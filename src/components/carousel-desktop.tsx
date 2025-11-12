@@ -6,6 +6,7 @@ export default function CarouselDesktop({ projects }: { projects: Post[] }) {
   return (
     <div className="relative md:flex w-full flex-col items-center justify-center overflow-hidden hidden ">
       <Marquee
+        pauseOnHover
         className="py-8"
         style={{ "--duration": "40s" } as React.CSSProperties}
       >

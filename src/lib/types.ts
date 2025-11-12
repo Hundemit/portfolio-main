@@ -16,7 +16,7 @@ export type Metadata = {
 };
 
 export interface ProjectLink {
-  type: string;
+  type: "Website" | "GitHub";
   href: string;
   icon: ReactNode;
 }

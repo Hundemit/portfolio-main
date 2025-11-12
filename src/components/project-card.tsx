@@ -1,17 +1,23 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
-import { Icons } from "./icons";
 import { ProjectLink } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { useTheme } from "next-themes";
+import { ProjectLinkButton } from "./project-link-button";
 
 interface Props {
   title: string;
@@ -27,7 +33,19 @@ interface Props {
   descriptionShow?: boolean;
 }
 
-export function ProjectCard({ title, slug, description, dates, tags, link, image, video, links, className, descriptionShow = true }: Props) {
+export function ProjectCard({
+  title,
+  slug,
+  description,
+  dates,
+  tags,
+  link,
+  image,
+  video,
+  links,
+  className,
+  descriptionShow = true,
+}: Props) {
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
   const { theme, resolvedTheme } = useTheme();
@@ -45,7 +63,10 @@ export function ProjectCard({ title, slug, description, dates, tags, link, image
         router.push(`/blog/${slug}`);
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
-      className={"flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-105 cursor-pointer w-full"}>
+      className={
+        " flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-105 cursor-pointer w-full"
+      }
+    >
       {video && (
         <div className="h-40 w-full overflow-hidden">
           {isMounted && (
@@ -60,50 +81,65 @@ export function ProjectCard({ title, slug, description, dates, tags, link, image
           )}
         </div>
       )}
-      {image && <Image src={image} alt={title} width={500} height={300} className="h-40 w-full overflow-hidden object-cover object-top shadow-none rounded-none" />}
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <div className={cn(!descriptionShow && "hidden sm:block")}>
-            <time className="font-sans text-xs">{dates}</time>
-            <div className="hidden font-sans text-xs underline print:visible">{link?.replace("https://", "").replace("www.", "").replace("/", "")}</div>
-            <Markdown
-              components={{
-                a: ({ node, ...props }) => <Link {...props} target="_blank" onClick={(e) => e.stopPropagation()} href={props.href ?? ""} />,
-              }}
-              className=" prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-              {description}
-            </Markdown>
-          </div>
+      {image && (
+        <div className="p-2">
+          <Image
+            src={image}
+            alt={title}
+            width={500}
+            height={300}
+            className="h-40 w-full overflow-hidden object-cover object-top shadow-none rounded"
+          />
         </div>
+      )}
+      <CardHeader className="px-2">
+        <CardTitle className=" text-base">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
+      <CardContent className=" flex flex-col gap-2 px-2">
+        <div className={cn(!descriptionShow && "hidden sm:block")}>
+          <div className="hidden font-sans text-xs underline print:visible">
+            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
+          </div>
+          {/* markdown description */}
+          <Markdown
+            components={{
+              a: ({ node, ...props }) => (
+                <Link
+                  {...props}
+                  target="_blank"
+                  onClick={(e) => e.stopPropagation()}
+                  href={props.href ?? ""}
+                />
+              ),
+            }}
+            className=" prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert"
+          >
+            {description}
+          </Markdown>
+        </div>
+        {/* tags */}
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1">
             {tags?.map((tag) => (
-              <Badge className="px-1 py-0 text-[10px]" variant="secondary" key={tag}>
+              <Badge
+                variant="secondary"
+                className="px-1 py-0 text-[10px]"
+                key={tag}
+              >
                 {tag}
               </Badge>
             ))}
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2">
+      <div className=" flex-grow " />
+
+      <CardFooter className="px-2 pb-2 mt-auto">
+        {/* links */}
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-                href={link.href}
-                key={idx}
-                target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  <Icons.globe className="size-3" />
-                  {link.type}
-                </Badge>
-              </Link>
+          <div className="flex flex-row items-start gap-1 w-full">
+            {links.map((link, idx) => (
+              <ProjectLinkButton key={idx} link={link} index={idx} />
             ))}
           </div>
         )}
