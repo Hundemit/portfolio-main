@@ -104,8 +104,8 @@ export function TagFilter({ tags, selectedTag, tagCounts }: TagFilterProps) {
     <>
       <BlurFade delay={0.04 * 5}>
         <DesktopTagFilter />
-        <MobileTagFilter />
       </BlurFade>
+      <MobileTagFilter />
     </>
   );
 }
