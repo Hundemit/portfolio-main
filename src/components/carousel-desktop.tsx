@@ -3,6 +3,7 @@ import { Marquee } from "./magicui/marquee";
 import { Post } from "@/data/blog";
 import { Button } from "./ui/button";
 import { BookMarkedIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function CarouselDesktop({ projects }: { projects: Post[] }) {
   return (
@@ -29,10 +30,12 @@ export default function CarouselDesktop({ projects }: { projects: Post[] }) {
         ))}
       </Marquee>
 
-      <Button variant="outline" size="sm" className="">
-        <BookMarkedIcon className="h-4 w-4" />
-        Alle Projekte
-      </Button>
+      <Link href="/blog" className="">
+        <Button variant="outline" size="sm" className="">
+          <BookMarkedIcon className="h-4 w-4" />
+          Alle Projekte
+        </Button>
+      </Link>
 
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>

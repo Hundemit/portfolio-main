@@ -32,7 +32,7 @@ export default async function Blog({
   return (
     <BlurFade
       id="blog"
-      className="sm:mx-6 mx-2 border border-primary-foreground rounded-lg p-4 bg-primary-foreground/20 backdrop-blur-[2px] duration-300"
+      className="sm:mx-6 mx-0 border-0 border-primary-foreground sm:border rounded-lg px-6 sm:p-4 bg-primary-foreground/20 backdrop-blur-[2px] duration-300"
     >
       <StructuredData
         type="article"
@@ -71,34 +71,37 @@ export default async function Blog({
           </Suspense>
         </div>
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
-        <div className="flex flex-wrap gap-1 mb-8">
+      <BlurFade
+        className="flex flex-col gap-4  mb-4"
+        delay={BLUR_FADE_DELAY + 0.1}
+      >
+        <div className="flex flex-wrap gap-1 ">
           {post.metadata.tags.map((skill, id) => (
             <Badge variant="secondary" className="h-fit" key={skill}>
               {skill}
             </Badge>
           ))}
-          {post.metadata.links && post.metadata.links.length > 0 && (
-            <div className="flex gap-1 ml-auto w-full mt-4 ">
-              {post.metadata.links.map((link, id) => (
-                <Link
-                  key={id}
-                  href={link.href}
-                  className="w-full"
-                  target="_blank"
-                >
-                  <Button
-                    variant="default"
-                    className="w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 "
-                  >
-                    <Icons.globe className="size-3" />
-                    {link.type}
-                  </Button>
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
+        {post.metadata.links && post.metadata.links.length > 0 && (
+          <div className="flex gap-1 ml-auto w-full ">
+            {post.metadata.links.map((link, id) => (
+              <Link
+                key={id}
+                href={link.href}
+                className="w-full"
+                target="_blank"
+              >
+                <Button
+                  variant="default"
+                  className="w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 "
+                >
+                  <Icons.globe className="size-3" />
+                  {link.type}
+                </Button>
+              </Link>
+            ))}
+          </div>
+        )}
       </BlurFade>
       <BlurFade className="" delay={BLUR_FADE_DELAY + 0.2}>
         <article

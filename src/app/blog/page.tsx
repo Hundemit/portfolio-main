@@ -8,10 +8,19 @@ export { metadata };
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default async function BlogPage({ searchParams }: { searchParams: Promise<{ tag?: string }> }) {
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tag?: string }>;
+}) {
   const projects = await getBlogPosts();
 
-  const allTags = ["All", ...Array.from(new Set(projects.flatMap((blog) => blog.metadata.typeofBlogPost || []))).sort()];
+  const allTags = [
+    "All",
+    ...Array.from(
+      new Set(projects.flatMap((blog) => blog.metadata.typeofBlogPost || []))
+    ).sort(),
+  ];
   const resolvedSearchParams = await searchParams;
   const selectedTag = resolvedSearchParams.tag || "All";
 
@@ -25,25 +34,44 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     if (tag === "All") {
       acc[tag] = sortedProjects.length;
     } else {
-      acc[tag] = sortedProjects.filter((blog) => blog.metadata.typeofBlogPost?.includes(tag)).length;
+      acc[tag] = sortedProjects.filter((blog) =>
+        blog.metadata.typeofBlogPost?.includes(tag)
+      ).length;
     }
     return acc;
   }, {} as Record<string, number>);
 
-  const filteredProjects = selectedTag === "All" ? sortedProjects : sortedProjects.filter((project) => project.metadata.typeofBlogPost?.includes(selectedTag));
+  const filteredProjects =
+    selectedTag === "All"
+      ? sortedProjects
+      : sortedProjects.filter((project) =>
+          project.metadata.typeofBlogPost?.includes(selectedTag)
+        );
 
   return (
     <>
       <BlurFade delay={BLUR_FADE_DELAY * 5}>
         <section className="px-6">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-2">Blog & Projekte</h1>
-            <p className="text-muted-foreground text-base">Meine neuesten Webentwicklungs-Projekte mit React, Next.js und TypeScript - Von UI/UX Design bis zur vollständigen Implementierung</p>
+            <h1
+              aria-label="Blog & Projekte"
+              className="text-3xl font-bold tracking-tighter sm:text-4xl mb-2"
+            >
+              Blog & Projekte
+            </h1>
+            <p className="text-muted-foreground text-base">
+              Meine Projekte: Von UI/UX Design bis zur vollständigen
+              Implementierung
+            </p>
           </header>
         </section>
       </BlurFade>
       <div className="mx-6">
-        <TagFilter tags={allTags} selectedTag={selectedTag} tagCounts={tagCounts} />
+        <TagFilter
+          tags={allTags}
+          selectedTag={selectedTag}
+          tagCounts={tagCounts}
+        />
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-4 px-6">
         {filteredProjects.map((project, id) => (

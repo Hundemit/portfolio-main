@@ -14,6 +14,7 @@ import { Post } from "@/data/blog";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "./ui/button";
 import { BookMarkedIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function MobileCarousel({ projects }: { projects: Post[] }) {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -54,10 +55,12 @@ export default function MobileCarousel({ projects }: { projects: Post[] }) {
         <div className="flex items-center justify-center gap-2 w-fit  ml-6 mt-2">
           <CarouselPrevious className=" relative inset-0 translate-x-0 translate-y-0" />
           <CarouselNext className=" relative inset-0 translate-x-0 translate-y-0" />
-          <Button variant="outline" size="sm" className="">
-            <BookMarkedIcon className="h-4 w-4" />
-            Alle Projekte
-          </Button>
+          <Link href="/blog" className="">
+            <Button variant="outline" size="sm" className="">
+              <BookMarkedIcon className="h-4 w-4" />
+              Alle Projekte
+            </Button>
+          </Link>
         </div>
       </Carousel>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-background"></div>
