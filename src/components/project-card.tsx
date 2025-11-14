@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { useTheme } from "next-themes";
 import { ProjectLinkButton } from "./project-link-button";
+import { LinkIcon } from "lucide-react";
 
 interface Props {
   title: string;
@@ -64,7 +65,7 @@ export function ProjectCard({
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
       className={
-        " flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-105 cursor-pointer w-full"
+        " flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full sm:hover:scale-[1.01] cursor-pointer w-full min-h-96  "
       }
     >
       {video && (
@@ -88,12 +89,12 @@ export function ProjectCard({
             alt={title}
             width={500}
             height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top shadow-none rounded"
+            className="h-40 w-full overflow-hidden object-cover object-center shadow-none rounded"
           />
         </div>
       )}
       <CardHeader className="px-2">
-        <CardTitle className=" text-base">{title}</CardTitle>
+        <CardTitle className=" text-base line-clamp-1">{title}</CardTitle>
       </CardHeader>
       <CardContent className=" flex flex-col gap-2 px-2">
         <div className={cn(!descriptionShow && "hidden sm:block")}>
@@ -112,7 +113,7 @@ export function ProjectCard({
                 />
               ),
             }}
-            className=" prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert"
+            className=" prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert line-clamp-3"
           >
             {description}
           </Markdown>

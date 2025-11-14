@@ -46,7 +46,7 @@ export const ResumeCard = ({
   return (
     <Card
       className={cn(
-        "flex sm:translate-y-0 duration-300 ease-out group bg-background hover:bg-stone-100 dark:hover:bg-stone-900 p-1 px-2",
+        "flex sm:translate-y-0 duration-300 ease-out  bg-background hover:bg-stone-100 dark:hover:bg-stone-900 p-1 px-2",
         isExpanded
           ? "bg-stone-100 dark:bg-stone-900"
           : "sm:hover:-translate-y-0.5"

@@ -1,7 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { Marquee } from "@/components/magicui/marquee";
 import { SparklesText } from "@/components/magicui/sparkles-text";
-import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { StructuredData } from "@/components/structured-data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -10,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
 import { getPostsByNames } from "@/data/blog";
 import { DATA } from "@/data/resume/resume";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, BookMarkedIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Markdown from "react-markdown";
@@ -22,8 +21,8 @@ const BLUR_FADE_DELAY = 0.3;
 
 export default async function Page() {
   const projects = await getPostsByNames([
-    "pokedex-next",
     "nordi-rechno",
+    "pokedex-next",
     "google-cloud-data-analytics-zertifikat",
     "gyff",
     "aga-gutachten",
@@ -176,7 +175,7 @@ export default async function Page() {
             className="opacity-0 max-w-2xl mx-auto"
             delay={BLUR_FADE_DELAY + 0.5}
           >
-            <Markdown className="prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert text-base text-justify">
+            <Markdown className="prose prose-p:m-0 prose-p:mb-1 max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert text-base text-justify ">
               {DATA.personal.summary}
             </Markdown>
           </BlurFade>

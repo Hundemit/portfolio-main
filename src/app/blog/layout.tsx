@@ -15,7 +15,7 @@ export default async function BlogPageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="mt-12 mb-24 sm:my-24 duration-1000 max-w-2xl mx-auto">
+    <main className="mt-0 mb-24 sm:my-24 duration-1000 max-w-2xl mx-auto">
       <ProjectsBreadcrumb />
 
       {children}

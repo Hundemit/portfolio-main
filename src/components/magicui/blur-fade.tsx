@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 interface BlurFadeProps {
+  id?: string;
   children: React.ReactNode;
   className?: string;
   variant?: {
@@ -17,10 +18,24 @@ interface BlurFadeProps {
   inViewMargin?: string;
   blur?: string;
 }
-const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOffset = 6, inView = false, inViewMargin = "-50px", blur = "6px" }: BlurFadeProps) => {
+const BlurFade = ({
+  id,
+  children,
+  className,
+  variant,
+  duration = 0.4,
+  delay = 0,
+  yOffset = 6,
+  inView = false,
+  inViewMargin = "-50px",
+  blur = "6px",
+}: BlurFadeProps) => {
   const ref = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin as any });
+  const inViewResult = useInView(ref, {
+    once: true,
+    margin: inViewMargin as any,
+  });
   const isInView = !inView || inViewResult;
 
   useEffect(() => {
@@ -41,6 +56,7 @@ const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOf
   return (
     <AnimatePresence>
       <motion.div
+        id={id}
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -51,7 +67,8 @@ const BlurFade = ({ children, className, variant, duration = 0.4, delay = 0, yOf
           duration,
           ease: "easeOut",
         }}
-        className={className}>
+        className={className}
+      >
         {children}
       </motion.div>
     </AnimatePresence>

@@ -30,14 +30,19 @@ export default async function Blog({
   let post = await getPost(slug);
 
   return (
-    <section id="blog" className="px-6">
+    <BlurFade
+      id="blog"
+      className="sm:mx-6 mx-2 border border-primary-foreground rounded-lg p-4 bg-primary-foreground/20 backdrop-blur-[2px] duration-300"
+    >
       <StructuredData
         type="article"
         article={{
           title: post.metadata.title,
           description: post.metadata.description,
           publishedAt: post.metadata.publishedAt,
-          image: post.metadata.image ? `${DATA.personal.url}${post.metadata.image}` : `${DATA.personal.url}/Opengraphimage.png`,
+          image: post.metadata.image
+            ? `${DATA.personal.url}${post.metadata.image}`
+            : `${DATA.personal.url}/Opengraphimage.png`,
           slug: post.slug,
         }}
       />
@@ -53,27 +58,39 @@ export default async function Blog({
       />
 
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="title font-medium text-3xl tracking-tighter max-w-[650px]">{post.metadata.title}</h1>
+        <h1 className="title font-medium text-3xl tracking-tighter max-w-[650px]">
+          {post.metadata.title}
+        </h1>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
         <div className="flex justify-between items-center my-2 text-sm max-w-[650px]">
           <Suspense fallback={<p className="h-5" />}>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">{formatDate(post.metadata.publishedAt)}</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {formatDate(post.metadata.publishedAt)}
+            </p>
           </Suspense>
         </div>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
         <div className="flex flex-wrap gap-1 mb-8">
           {post.metadata.tags.map((skill, id) => (
-            <Badge className="h-fit" key={skill}>
+            <Badge variant="secondary" className="h-fit" key={skill}>
               {skill}
             </Badge>
           ))}
           {post.metadata.links && post.metadata.links.length > 0 && (
             <div className="flex gap-1 ml-auto w-full mt-4 ">
               {post.metadata.links.map((link, id) => (
-                <Link key={id} href={link.href} className="w-full" target="_blank">
-                  <Button variant="outline" className="w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 ">
+                <Link
+                  key={id}
+                  href={link.href}
+                  className="w-full"
+                  target="_blank"
+                >
+                  <Button
+                    variant="default"
+                    className="w-full hover:-translate-y-1 transition-all duration-300 ease-out flex gap-2 px-2 py-1 "
+                  >
                     <Icons.globe className="size-3" />
                     {link.type}
                   </Button>
@@ -83,9 +100,12 @@ export default async function Blog({
           )}
         </div>
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY + 0.2}>
-        <article className="prose prose-h2:mb-2 dark:prose-invert prose-p:text-justify prose-h1:text-2xl" dangerouslySetInnerHTML={{ __html: post.source }}></article>
+      <BlurFade className="" delay={BLUR_FADE_DELAY + 0.2}>
+        <article
+          className="prose prose-h2:mb-2 dark:prose-invert prose-p:text-justify prose-h1:text-2xl prose-img:m-0 bg-pr"
+          dangerouslySetInnerHTML={{ __html: post.source }}
+        ></article>
       </BlurFade>
-    </section>
+    </BlurFade>
   );
 }

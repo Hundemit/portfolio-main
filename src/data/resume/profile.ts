@@ -8,7 +8,11 @@ export const PROFILE = {
   location: "Trappenkamp, DE",
   locationLink: "https://www.google.com/maps/place/trappenkamp",
 
-  description: ["Ich entwickle einfache und nützliche Software.", "Ich finde gerne clevere Lösungen für schwierige Aufgaben.", "Mir sind guter Code und Teamarbeit wichtig."],
+  description: [
+    "Ich entwickle einfache und nützliche Software.",
+    "Ich finde gerne clevere Lösungen für schwierige Aufgaben.",
+    "Mir sind guter Code und Teamarbeit wichtig.",
+  ],
 
   metaKeywords: [
     "Jan Hindemit",
@@ -44,7 +48,7 @@ export const PROFILE = {
   ],
 
   summary:
-    "Ich bin Fullstack Entwickler und UI/UX Designer aus Leidenschaft. Mein Ziel ist es, Anwendungen zu bauen, die technisch sauber und für Nutzer intuitiv sind. \n\n Bei der Northern Lights GmbH und dem FinTech-Startup GYFF habe ich gelernt, Design, Entwicklung und Produktstrategie zusammenzubringen. Ich lege Wert auf wartbaren Code, eine klare Produktvision – und manchmal hilft ein beherzter Druck auf Backspace, um bessere Software zu schaffen.",
+    "Ich bin Fullstack Entwickler und UI/UX Designer aus Leidenschaft. Mein Ziel ist es, Anwendungen zu bauen, die technisch sauber und für Nutzer intuitiv sind. \n\n Bei der Northern Lights GmbH und dem FinTech-Startup GYFF habe ich gelernt, Design, Entwicklung und Produktstrategie zusammen&shy;zubringen. Ich lege Wert auf wartbaren Code, eine klare Produktvision – und manchmal hilft ein beherzter Druck auf Backspace, um bessere Software zu schaffen.",
 
   avatarUrl: "/me.png",
   email: "janhindemit1@gmail.com",
