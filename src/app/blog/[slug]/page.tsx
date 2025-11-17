@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { generateMetadata } from "./metadata";
 import { StructuredData } from "@/components/structured-data";
+import Image from "next/image";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -32,7 +33,7 @@ export default async function Blog({
   return (
     <BlurFade
       id="blog"
-      className="sm:mx-6 mx-0 border-0 border-primary-foreground sm:border rounded-lg px-6 sm:p-4 bg-primary-foreground/20 backdrop-blur-[2px] duration-300"
+      className="rounded-lg px-6 bg-primary-foreground/20 backdrop-blur-[2px] duration-300"
     >
       <StructuredData
         type="article"
@@ -56,12 +57,24 @@ export default async function Blog({
           slug: post.slug,
         }}
       />
-
-      <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="title font-medium text-3xl tracking-tighter max-w-[650px]">
-          {post.metadata.title}
-        </h1>
+      {/* Blog Cover */}
+      <BlurFade className="relative  " delay={BLUR_FADE_DELAY + 0.1}>
+        <Image
+          className=""
+          src={post.metadata.image || ""}
+          alt={post.metadata.title}
+          width={1000}
+          height={1000}
+        />
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-[#0B0B0B] to-transparent to-60%  flex items-end justify-start px-1">
+          <h1 className="title font-medium text-5xl tracking-tighter max-w-[650px]">
+            {post.metadata.title}
+          </h1>
+        </div>
       </BlurFade>
+      {/* Blog Title */}
+
+      {/* Blog Published At */}
       <BlurFade delay={BLUR_FADE_DELAY + 0.1}>
         <div className="flex justify-between items-center my-2 text-sm max-w-[650px]">
           <Suspense fallback={<p className="h-5" />}>
@@ -71,6 +84,7 @@ export default async function Blog({
           </Suspense>
         </div>
       </BlurFade>
+      {/* Blog Tags */}
       <BlurFade
         className="flex flex-col gap-4  mb-4"
         delay={BLUR_FADE_DELAY + 0.1}
@@ -103,6 +117,7 @@ export default async function Blog({
           </div>
         )}
       </BlurFade>
+      {/* Blog Content */}
       <BlurFade className="" delay={BLUR_FADE_DELAY + 0.2}>
         <article
           className="prose prose-h2:mb-2 dark:prose-invert prose-p:text-justify prose-h1:text-2xl prose-img:m-0 bg-pr"
