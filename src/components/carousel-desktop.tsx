@@ -11,7 +11,7 @@ export default function CarouselDesktop({ projects }: { projects: Post[] }) {
       <Marquee
         pauseOnHover
         className="py-7"
-        style={{ "--duration": "40s" } as React.CSSProperties}
+        style={{ "--duration": "60s" } as React.CSSProperties}
       >
         {projects.map((project, id) => (
           <div key={id} className="w-full sm:w-auto sm:max-w-80 max-w-72">
