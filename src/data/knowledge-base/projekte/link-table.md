@@ -1,0 +1,67 @@
+---
+publishedAt: "2025-08-01"
+summary: "Link Table ist eine open-source Webanwendung zur strukturierten Sammlung und visuellen Organisation von Webseiten – entwickelt mit modernem Full-Stack-Stack."
+title: "Link Table"
+dates: "August 2025"
+active: true
+description: "Link Table ist eine open-source Webanwendung zur strukturierten Sammlung und visuellen Organisation von Webseiten – entwickelt mit modernem Full-Stack-Stack."
+tags:
+  - Next.js
+  - TypeScript
+  - React
+  - PostgreSQL
+  - Prisma
+  - Tailwind CSS
+image: "/content/link-table/cover.png"
+video: ""
+links:
+  - type: "Website"
+    href: "https://link-table-website.vercel.app/"
+    icon: globe
+  - type: "GitHub"
+    href: "https://github.com/Hundemit/link-table-website/"
+    icon: github
+typeofBlogPost:
+  - Website
+  - Web-App
+---
+
+Link Table ist eine open-source Webanwendung zur strukturierten Sammlung und visuellen Organisation von Webseiten – entwickelt mit modernem Full-Stack-Stack.
+
+# Einleitung
+
+Im Entwickleralltag stößt man häufig auf nützliche Tools, inspirierende Designs oder hilfreiche Ressourcen – doch oft gehen diese Funde in unübersichtlichen Lesezeichenordnern verloren. Um dieses Problem systematisch zu lösen, habe ich **Link Table** entwickelt: eine Webanwendung, die externe Links übersichtlich sammelt, kategorisiert und visuell darstellt.
+
+# Funktionen und Benutzererfahrung
+
+Link Table ermöglicht das schnelle Hinzufügen von URLs. Die Anwendung extrahiert automatisch Titel und Metadaten und generiert mithilfe der Microlink-API einen Screenshot als Vorschau. Nutzer:innen können Einträge mit mehreren Tags versehen – etwa nach Website-Typ (Blog, Tool, Portfolio) oder Design-Stil (Minimalistisch, Dark Mode, Playful).
+
+Weitere Funktionen:
+
+- Echtzeit-Suche nach Titel oder URL
+- Kombinierbare Filter für präzises Durchsuchen
+- Manueller Bild-Upload (gespeichert in Vercel Blob)
+- Dark/Light Mode und responsives Layout
+- Rollenbasierte Authentifizierung mit JWT und bcrypt
+
+# Technischer Stack
+
+Die Anwendung wurde mit einem modernen, typsicheren Stack umgesetzt:
+
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4
+- **UI-Komponenten**: shadcn/ui, Radix UI, Lucide React
+- **State & Daten**: TanStack Query, React Context, React Hook Form mit Zod-Validierung
+- **Backend**: Prisma ORM, PostgreSQL, serverlose API-Routes in Next.js
+- **Authentifizierung**: JWT-basiert, Passwörter gehasht mit bcrypt
+- **Infrastruktur**: Vercel (Hosting & Blob Storage), Microlink.io (Screenshots)
+- **Tooling**: ESLint, Turbopack für schnelle Entwicklungszyklen
+
+Der Stack orientiert sich an etablierten Best Practices – mit Fokus auf Wartbarkeit, Typsicherheit und Entwicklerfreundlichkeit.
+
+# Open Source und Weiterentwicklung
+
+Link Table ist vollständig open source und kostenlos nutzbar – ohne Paywalls, Tracking oder eingeschränkte Funktionen. Der Quellcode ist transparent und dokumentiert, um Nachvollziehbarkeit und Community-Beiträge zu ermöglichen.
+
+Die Anwendung richtet sich an Designer:innen, Entwickler:innen, Forschende oder alle, die digitale Ressourcen strukturiert sammeln möchten.
+
+Link Table entstand aus einem konkreten Bedürfnis heraus und zeigt, wie ich technische Lösungen pragmatisch, benutzerorientiert und mit klarem Fokus auf Code-Qualität umsetze.

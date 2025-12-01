@@ -4,10 +4,15 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function ModeToggle({ className }: { className?: string }) {
   const { setTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const renderIcon = () => {
     switch (resolvedTheme) {
@@ -22,6 +27,10 @@ export function ModeToggle({ className }: { className?: string }) {
   useEffect(() => {
     console.log("theme", theme, "resolvedTheme", resolvedTheme);
   }, [theme, resolvedTheme]);
+
+  if (!mounted) {
+    return <SunIcon className="size-4" />;
+  }
 
   return (
     <Button

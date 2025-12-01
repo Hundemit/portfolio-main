@@ -1,0 +1,43 @@
+---
+publishedAt: "2023-02-15"
+summary: "Web App zur Echtheitsprüfung von Dateien mit Blockchain und Microservices."
+title: "Uplovely"
+dates: "Februar 2023"
+active: true
+description: "Microservices-basierte Lösung für transparente und sichere Datei-Validierung."
+tags:
+  - UI/UX Design
+image: "/content/uplovely/cover.png"
+video: ""
+typeofBlogPost: "UI/UX Design"
+---
+
+Uplovely ist eine Web App die es Nutzer:innen ermöglicht die Echtheit von Dateien schnell und einfach zu überprüfen. Die App nutzt Microservices und Blockchain um Sicherheit und Transparenz zu gewährleisten und ist ein zentraler Baustein einer modernen Validierungsplattform.
+
+## Meine Rolle bei Uplovely
+
+Ich war als Designer und Entwickler für das gesamte UI/UX Design verantwortlich. Ich habe eng mit den Entwicklungsteams zusammengearbeitet um eine intuitive und ansprechende Benutzeroberfläche zu schaffen, die die Funktionalität der Microservices klar widerspiegelt.
+
+## Die Web App für sichere und vertrauenswürdige Dateiüberprüfung
+
+Durch Uplovely wird die Authentizität von Dateien garantiert. Einmal auf der Blockchain registrierte Dateien können nicht mehr verändert werden. Änderungen werden sofort erkannt und nicht als Originalversion anerkannt. So leistet Uplovely einen wichtigen Beitrag zur Sicherung vertraulicher Dokumente und Informationen.
+
+![App Screenshot](/content/uplovely/app.gif)
+
+## Funktionen
+
+### Input Switcher
+
+Uplovely bietet zwei Upload-Optionen. Nutzer:innen können direkt eine Datei hochladen oder einen bestehenden Hashcode eingeben. Das Design passt sich dem gewählten Modus dynamisch an und sorgt für ein reibungsloses Nutzererlebnis.
+
+![Input Switcher](/content/uplovely/input-switcher.gif)
+
+### Details
+
+Nach erfolgreicher Überprüfung zeigt die App detaillierte Metadaten an. Dazu gehören Dateiname, Blocknummer des Hashes auf der Blockchain, Autor, Erstellungsdatum und der Hashcode der Datei.
+
+![Details](/content/uplovely/details.png)
+
+## Fazit
+
+Die Arbeit an Uplovely hat meine Fähigkeiten im UI/UX Design und in der Zusammenarbeit mit Microservices gestärkt. Ich habe gelernt wie Blockchain-Technologie in eine benutzerfreundliche Web App integriert wird und wie wichtig klare Nutzerführung bei komplexen Validierungsprozessen ist.

@@ -1,0 +1,42 @@
+---
+publishedAt: "2023-03-24"
+summary: "Intuitives System zur Erfassung und Auswertung anonymen Kunden- und Patientenfeedbacks."
+title: "Watcher"
+dates: "März 2023"
+active: true
+description: "UI/UX-Design eines internen Hubs zur Analyse und Visualisierung von Bewertungen."
+tags:
+  - Figma
+  - UI/UX Design
+image: "/content/watcher/cover.png"
+video: ""
+typeofBlogPost: "UI/UX Design"
+---
+
+Wie zufrieden sind Patientinnen mit ihrem Besuch Welche Ärztinnen werden besonders positiv bewertet Mit Watcher haben wir ein intuitives System entwickelt das genau solche Fragen beantwortet Es erlaubt Einrichtungen wie Arztpraxen oder Kaufhäusern anonymes Kundenfeedback direkt vor Ort zu erfassen und anschließend bequem auszuwerten
+
+## Meine Rolle bei Watcher
+
+Ich war für das gesamte UI/UX-Design des internen Hubs verantwortlich Der Prozess begann mit einer Analyse der Anforderungen und Nutzerbedürfnisse im Praxis und Servicealltag Darauf aufbauend habe ich Wireframes entwickelt und ein visuelles Grundkonzept erstellt In enger Zusammenarbeit mit dem Team entstanden interaktive Prototypen die ich getestet und anhand von Feedback optimiert habe Ziel war es komplexe Bewertungsdaten übersichtlich verständlich und visuell ansprechend aufzubereiten
+
+## Der Watcher Hub – Einblick in Bewertungen
+
+Im internen Hub können Mitarbeitende einer Praxis oder Einrichtung alle Bewertungen auf einen Blick nachverfolgen Dabei stehen verschiedene Analyse Features zur Verfügung
+
+![Hub Screenshot](/content/watcher/hub.gif)
+
+Statistik Bereich  
+Visualisierte Auswertung der durchschnittlichen Bewertung tagesaktuell wöchentlich monatlich oder jährlich Die Entwicklung wird farblich gekennzeichnet um Trends sofort zu erkennen
+
+Kalender Filter  
+Bewertungen lassen sich nach bestimmten Tagen oder Zeiträumen filtern perfekt für den Vergleich einzelner Wochen oder Ereignisse
+
+Bewertungs Tabelle  
+Alle Einträge lassen sich detailliert nach Datum Uhrzeit Arzt oder Standort einsehen Ergänzt um Bewertungsemojis und freie Bemerkungen der Patientinnen
+
+Standort Filter  
+Wenn mehrere Filialen oder Praxen beteiligt sind können Bewertungen gezielt pro Standort ausgewertet werden
+
+## Fazit
+
+Die Arbeit an Watcher war für mich eine wertvolle Erfahrung Nicht nur im UI/UX-Design sondern auch im praktischen Einsatz von Datenvisualisierung und Nutzerführung im Alltag von Servicepersonal Ich konnte meine Fähigkeiten in der Gestaltung datengetriebener Interfaces weiterentwickeln und gleichzeitig ein System mitgestalten das echten Mehrwert im täglichen Betrieb bietet

@@ -1,0 +1,105 @@
+---
+publishedAt: "2025-11-12"
+summary: "Mandantenfähige SaaS für automatisierte Angebote und Rechnungen mit modernem Next.js-Stack."
+title: "Nordi Rechno"
+dates: "November 2025"
+active: true
+description: "Nordi Rechnung vereint Multi-Tenancy, automatisierte Kalkulation, PDF-Versand und Analytics in einer modernen Next.js 16 SaaS, um Agenturen und Teams saubere Rechnungsprozesse zu ermöglichen."
+tags:
+  - Next.js
+  - TypeScript
+image: "/content/nordi-rechno/cover.png"
+video: ""
+links:
+  - type: "Website"
+    href: "https://www.nordi-rechno.de/landing"
+    icon: globe
+typeofBlogPost:
+  - Website
+  - Web-App
+---
+
+Nordi Rechnung ist ein kostenloses Tool, mit dem du Rechnungen erstellen und deine Kunden an einem Ort verwalten kannst, einfach, übersichtlich und ohne Aufwand.
+
+## Einleitung
+
+Ich brauchte eine einfache Möglichkeit, Rechnungen zu schreiben und meine Kundendaten zu verwalten. Da ich keine passende kostenlose Lösung gefunden habe, entwickelte ich meine eigene. Aus dem ursprünglich kleinen Projekt wurde durch Multi Tenancy eine Plattform, die beliebig viele Nutzer und Organisationen unterstützt. So entstand Nordi Rechnung als öffentlich nutzbare Web App.
+
+## Zielgruppe & Nutzen
+
+Nordi Rechnung richtet sich an alle, die regelmäßig Rechnungen erstellen müssen, insbesondere kleine Unternehmen, Freelancer, Projektteams und Agenturen.  
+Die App spart Zeit, reduziert Fehler und sorgt dafür, dass Abläufe nachvollziehbar und konsistent bleiben. Automatisierte Kalkulationen, strukturierte Service Kataloge und ein klarer Rechnungsworkflow helfen dabei, wiederkehrende Arbeit mühelos zu erledigen.
+
+## Architektur & Techstack
+
+Unter der Haube läuft eine moderne SaaS Architektur auf Basis von **Next.js 16** und einem konsequenten Server First Ansatz. Im Frontend kommen **React 19**, **Tailwind CSS**, **shadcn/ui** und **Radix Primitives** zum Einsatz, um ein zugängliches und konsistentes Interface zu ermöglichen.
+
+Das Backend basiert auf **Server Actions**, **Prisma**, einer **Neon PostgreSQL** Datenbank und **BetterAuth** für Sessions und OAuth.  
+Weitere Tools im Einsatz:
+
+- **TanStack Query** für Server State
+- **React Hook Form + Zod** für valide Formulare
+- **@react-pdf/renderer** für PDF Generierung
+- **Resend** für E Mail Versand
+- **Vitest + React Testing Library** für Tests
+
+Der Stack ist bewusst gewählt: hohe Stabilität, hervorragende Developer Experience und Skalierbarkeit auf moderner Infrastruktur.
+
+## Kernfeatures
+
+### 5.1 Multi Tenancy
+
+- Mandantenfähiges Datenmodell, bei dem jeder Nutzer seinen eigenen Arbeitsbereich hat
+- Jeder Mandant kann eigene Kunden und Rechnungen verwalten
+- Saubere Trennung der Daten zwischen verschiedenen Nutzern und Accounts
+
+### 5.2 Service Katalog
+
+- Wiederverwendbare Services mit eigenen Kategorien
+- Multiplikatoren und automatische Preisberechnung
+- Einheitliche Kalkulation für Projekte
+
+### 5.3 Rechnungsworkflow
+
+- Klarer Statusflow von _Draft_ bis _Paid_
+- Kundenhistorie, offene Posten, Erinnerungslogik
+- Automatische Nummernvergabe und Formatierung
+
+### 5.4 PDF & E Mail
+
+- Serverseitige, gebrandete PDF Erstellung
+- Direkter Download und E Mail Versand
+- Resend Integration für zuverlässige Zustellung
+
+### 5.5 Dashboard & Analytics
+
+- Echtzeit KPIs zu Umsatz, Cashflow und Forderungen
+- Interaktive Charts
+- Erweiterbare Analyse Karten für Business Insights
+
+## Technische Herausforderungen & Learnings
+
+### 6.1 Multi Tenancy & Datenisolierung
+
+Eine saubere Mandantentrennung war zentral. Guards wie `requireAccountId()` schützen Server Actions, Queries filtern strikt nach Organisation und Sessions aktualisieren sich automatisch beim Wechsel. So bleibt die Datenbasis sicher getrennt.
+
+### 6.2 Auth mit BetterAuth
+
+Die Kombination aus E Mail Passwort und Google OAuth, eingebettet in moderne Session Mechanismen, sorgt für sichere und performante Authentifizierung. HttpOnly Cookies, CSRF Schutz und Trusted Origins erhöhen die Robustheit.
+
+### 6.3 PDF Generierung
+
+Mit modularen PDF Komponenten für Header, Positionen und Totals konnte ein flexibles System umgesetzt werden. Logos werden als Buffer eingebettet, Daten parallel geladen und serverseitig ausgeliefert.
+
+### 6.4 State Management
+
+TanStack Query übernimmt Optimistic Updates, Revalidierung und Caching. Besonders bei Tabellen und Detailansichten sorgt dieses Server State Muster für Performance ohne unnötige Re Renders.
+
+### 6.5 Testing
+
+Vitest deckt die Business Logik ab, React Testing Library stellt UI Verhalten sicher und MSW sorgt für realistische Mocks von Auth und PDF Flows. Das macht die Anwendung langfristig wartbar.
+
+## Fazit
+
+Nordi Rechnung zeigt, wie moderne SaaS Architekturen mit Next.js 16, Prisma und BetterAuth umgesetzt werden können, skalierbar, performant und alltagsnah.  
+Ich habe dabei meine Kenntnisse in Multi Tenancy, serverseitiger Dokumentgenerierung, State Management und Testing deutlich vertieft. Das Projekt ist ein Beleg dafür, dass sich moderne Webtechnologien zu einem produktionsreifen Rechnungsmanagement System verbinden lassen, mit klarer Architektur und echten Mehrwerten für die Nutzer.

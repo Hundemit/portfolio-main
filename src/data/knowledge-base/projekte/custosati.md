@@ -1,0 +1,38 @@
+---
+publishedAt: "2023-04-24"
+summary: "Tablet-App für Patientenbefragung mit anonymem Feedback und Echtzeit-Auswertung."
+title: "CustoSati"
+dates: "April 2023"
+active: true
+description: "UX/UI-Design und interaktive Prototypen für eine Tablet-App zur direkten Zufriedenheitsbefragung."
+tags:
+  - Figma
+  - UI/UX Design
+  - Prototyping
+image: "/content/custosati/cover.png"
+video: ""
+links: []
+typeofBlogPost: "UI/UX Design"
+---
+
+UX/UI-Design und interaktive Prototypen für eine Tablet-App zur direkten Zufriedenheitsbefragung.
+
+## Meine Rolle bei CustoSati
+
+Ich war für das gesamte UI/UX-Design der App verantwortlich und habe einen nutzerzentrierten Designprozess durchlaufen. Beginnend mit einer Anforderungsanalyse und der Definition der Zielgruppe habe ich erste Wireframes erstellt und verschiedene Nutzungsszenarien entworfen. Darauf folgten interaktive Prototypen in Figma, die ich in mehreren Feedbackschleifen mit Nutzer:innen und dem Team getestet und iterativ weiterentwickelt habe. Besonderes Augenmerk lag auf Barrierefreiheit, klarer Nutzerführung und einer emotional zugänglichen Gestaltung. Das finale Design wurde für den Einsatz auf Tablets optimiert und unterstützt eine reibungslose Nutzung auch ohne technisches Vorwissen.
+
+## Das kann CustoSati
+
+CustoSati läuft auf Tablets, die in Arztpraxen, Verkaufsflächen oder anderen Servicebereichen aufgestellt sind. Die App leitet Nutzer:innen in wenigen Schritten durch den Bewertungsprozess:
+
+![Patientenbefragung](/content/custosati/feedback.gif)
+
+CustoSati wurde speziell für den Einsatz auf öffentlich zugänglichen Tablets konzipiert. Die App führt Schritt für Schritt durch eine kurze Befragung zur Zufriedenheit. Die Bewertung erfolgt über eine visuelle Skala mit Emojis von „sehr schlecht“ bis „sehr gut“ und kann durch Freitext ergänzt werden. Bei negativer Bewertung wird optional nach konkreten Gründen gefragt, etwa zu langen Wartezeiten oder unfreundlichem Personal, damit gezielte Verbesserungen vorgenommen werden können.
+
+![Team](/content/custosati/team.png)
+
+## Fazit
+
+Die Entwicklung von CustoSati war für mich ein spannender Schritt in Richtung „Design for Point of Experience“. Hier ging es nicht um komplexe Interfaces oder tiefgehende Funktionalität, sondern um radikale Vereinfachung: ein System, das auf den ersten Blick funktioniert – für Menschen jeden Alters, auch ohne Technikaffinität.
+
+Ich konnte meine Fähigkeiten im Bereich nutzerzentriertes Design weiter ausbauen und ein Interface entwickeln, das täglich im realen Umfeld zum Einsatz kommt. Die direkte Kopplung an das Auswertungstool Watcher ermöglichte es uns, ein geschlossenes Feedbacksystem zu schaffen – effizient, datensparsam und benutzerfreundlich.
