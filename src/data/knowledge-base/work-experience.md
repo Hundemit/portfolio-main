@@ -2,22 +2,22 @@
 
 ## Alle meine eigen Projekte die ich umgesetzt habe, diese sind einzelt auch im Ordner /projekte zu finden:
 
-- **Aga Gutachten**
-- **Custosati**
-- **Der Nachhaltige**
-- **Google Cloud Data Analytics Zertifikat**
-- **Gyff**
-- **Link Table**
-- **Nordi AI**
-- **Nordi Connect**
-- **Nordi Rechno**
-- **Pokedex Next**
-- **Pokedex React**
-- **Todolist**
-- **Uplovely**
-- **VitePress**
-- **Watcher**
-- **YouTube Stylus**
+- **Aga Gutachten** – Moderne, mehrsprachige Landing Page für einen KFZ-Sachverständigen aus Trappenkamp zur Präsentation seiner Gutachten-Dienstleistungen.
+- **Custosati** – UX/UI-Design und interaktive Prototypen für eine Tablet-App zur direkten Zufriedenheitsbefragung von Patienten und Kunden.
+- **Der Nachhaltige** – Konzeption und Design eines modernen, zugänglichen Webauftritts für ein gemeinnütziges Schulprojekt, das wiederverwendbare Schreibwaren anbietet.
+- **Google Cloud Data Analytics Zertifikat** – Zertifikat über Cloud Skills Boost von Google zur Erweiterung der Kenntnisse in Datenanalyse, SQL, BigQuery und Datenvisualisierung.
+- **Gyff** – Design und Umsetzung einer informativen, interaktiven Website zur Präsentation einer Aktienanalyse-App für ein Fintech-Unternehmen.
+- **Link Table** – Open-source Webanwendung zur strukturierten Sammlung und visuellen Organisation von Webseiten mit automatischer Metadatenextraktion.
+- **Nordi AI** – Moderner Next.js-Chatbot mit Streaming Responses, Modell-Auswahl und RAG-System für die Einbindung eigener Dokumente.
+- **Nordi Connect** – Dienstleister für KI-gestützte Telefonie mit einem vollwertigen KI-Telefonassistenten, der eingehende und ausgehende Anrufe übernimmt.
+- **Nordi Rechno** – Mandantenfähige SaaS für automatisierte Angebote und Rechnungen mit Multi-Tenancy, PDF-Versand und Analytics.
+- **Pokedex Next** – Moderne Pokédex-Web-App mit Live-Suche, Filterfunktion und interaktiven Statistiken, entwickelt mit Next.js und TypeScript.
+- **Pokedex React** – Responsive Web-App für alle Pokémon mit Live-Suche, Filterung und Dark/Light Mode, erstellt mit React und TailwindCSS.
+- **Todolist** – Intuitive To-Do-List-App mit React und responsive Gestaltung zum Hinzufügen, Abschließen und Löschen von Aufgaben.
+- **Uplovely** – Web-App zur Echtheitsprüfung von Dateien mit Blockchain und Microservices für transparente und sichere Datei-Validierung.
+- **VitePress** – Zentrale Dokumentationsseite für verschiedene Projekte, umgesetzt mit VitePress als strukturiertes, benutzerfreundliches Portal.
+- **Watcher** – Intuitives System zur Erfassung und Auswertung anonymen Kunden- und Patientenfeedbacks mit UI/UX-Design eines internen Analyse-Hubs.
+- **YouTube Stylus** – Browsererweiterung mit Stylus für einen cineastischen YouTube-Modus mit Ambilight-Effekten und dezentem UI-Design.
 
 ## Berufserfahrung
 
