@@ -63,13 +63,35 @@ export async function POST(req: Request) {
       model: openrouter.chat(selectedModel),
       system: systemContext || undefined,
       messages: convertToModelMessages(messages),
+      onFinish: (result) => {
+        // Log completion for debugging
+        console.log("Chat completion:", {
+          finishReason: result.finishReason,
+          usage: result.usage,
+        });
+      },
     });
 
     return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("Error in chat API route:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    const errorStack = error instanceof Error ? error.stack : undefined;
+
+    // Log full error details for debugging
+    console.error("Full error details:", {
+      message: errorMessage,
+      stack: errorStack,
+      error: error,
+    });
+
     return new Response(
-      JSON.stringify({ error: (error as Error).message || "Unknown error" }),
+      JSON.stringify({
+        error: errorMessage,
+        details:
+          process.env.NODE_ENV === "development" ? errorStack : undefined,
+      }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }

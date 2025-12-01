@@ -54,6 +54,9 @@ export function formatErrorMessage(error: unknown): string {
     } else if (error.message.includes("Timeout")) {
       message =
         "Die Anfrage hat zu lange gedauert. Bitte versuchen Sie es erneut.";
+    } else if (error.message.includes("User not found")) {
+      message =
+        "Es gab ein Problem mit der API-Verbindung. Bitte versuchen Sie es später erneut oder kontaktieren Sie den Administrator.";
     } else {
       message =
         "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";

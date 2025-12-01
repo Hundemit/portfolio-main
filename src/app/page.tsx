@@ -9,7 +9,6 @@ import { SkillsSection } from "@/components/mainpage/SkillsSection";
 import { ProjectsSection } from "@/components/mainpage/ProjectsSection";
 import { ContactSection } from "@/components/mainpage/ContactSection";
 import { ChatSection } from "@/components/mainpage/ChatSection";
-import { ChatButton } from "@/components/mainpage/ChatButton";
 
 export default async function Page() {
   const projects = await getPostsByNames([
