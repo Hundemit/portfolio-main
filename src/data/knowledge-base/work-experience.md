@@ -1,23 +1,23 @@
 # Work Experience – Jan Hindemit
 
-## Alle meine eigen Projekte die ich umgesetzt habe, diese sind einzelt auch im Ordner /projekte zu finden.
+## Alle meine eigen Projekte die ich umgesetzt habe, diese sind einzelt auch im Ordner /projekte zu finden:
 
-- aga-gutachten.md
-- custosati.md
-- der-nachhaltige.md
-- google-cloud-data-analytics-zertifikat.md
-- gyff.md
-- link-table.md
-- nordi-ai.md
-- nordi-connect.md
-- nordi-rechno.md
-- pokedex-next.md
-- pokedex-react.md
-- todolist.md
-- uplovely.md
-- vitepress.md
-- watcher.md
-- youtube-stylus.md
+- **Aga Gutachten**
+- **Custosati**
+- **Der Nachhaltige**
+- **Google Cloud Data Analytics Zertifikat**
+- **Gyff**
+- **Link Table**
+- **Nordi AI**
+- **Nordi Connect**
+- **Nordi Rechno**
+- **Pokedex Next**
+- **Pokedex React**
+- **Todolist**
+- **Uplovely**
+- **VitePress**
+- **Watcher**
+- **YouTube Stylus**
 
 ## Berufserfahrung
 
