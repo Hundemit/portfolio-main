@@ -10,7 +10,10 @@ export const RAG_CONFIG = {
   chunkOverlapTokens: 32,
   topK: 20,
   minSimilarity: 0.3, // cosine similarity threshold (0.0-1.0, niedriger = mehr Ergebnisse)
-  cachePath: join(process.cwd(), ".next", "cache", "rag-index.json"),
+  // Verwende /tmp auf Vercel (persistent zwischen Requests) oder .next/cache lokal
+  cachePath: process.env.VERCEL
+    ? "/tmp/rag-index.json"
+    : join(process.cwd(), ".next", "cache", "rag-index.json"),
   embeddingBatchSize: 16,
   maxFileSizeMB: 50,
   enableOCR: false, // Phase 2

@@ -30,7 +30,7 @@ export async function loadSuggestionPrompt(): Promise<string> {
   } catch {
     console.warn(
       "Suggestion Prompt Datei nicht gefunden:",
-      SUGGESTION_PROMPT_PATH,
+      SUGGESTION_PROMPT_PATH
     );
     return "No suggestion prompt found";
   }
@@ -87,7 +87,7 @@ export async function loadAllDocuments(): Promise<Record<string, string>> {
  * @returns Der kombinierte Kontext als String
  */
 export async function loadFullContext(
-  includeDocuments: boolean = true,
+  includeDocuments: boolean = true
 ): Promise<string> {
   const parts: string[] = [];
 
@@ -131,14 +131,26 @@ export async function loadRelevantContext(userQuery: string): Promise<string> {
     const { loadRelevantContext: loadRAGContext } = await import("./rag/index");
     const ragContext = await loadRAGContext(userQuery);
 
-    if (ragContext.context) {
+    if (ragContext.context && ragContext.context.trim().length > 0) {
       parts.push("\n\n");
       parts.push(ragContext.context);
+    } else {
+      // Keine Chunks gefunden, Fallback auf Standard-Dokumente
+      console.warn("Keine relevanten Chunks gefunden, verwende Fallback");
+      const documents = await loadAllDocuments();
+      const documentEntries = Object.entries(documents);
+
+      if (documentEntries.length > 0) {
+        parts.push("\n\n## Verfügbare Informationen:\n");
+        documentEntries.forEach(([filename, content]) => {
+          parts.push(`\n### ${filename}\n\n${content}\n`);
+        });
+      }
     }
   } catch (error) {
     console.warn(
       "RAG nicht verfügbar, Fallback auf Standard-Dokumente:",
-      error,
+      error
     );
     const documents = await loadAllDocuments();
     const documentEntries = Object.entries(documents);

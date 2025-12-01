@@ -30,6 +30,7 @@
     "@radix-ui/react-use-controllable-state": "^1.2.2",
     "@shikijs/transformers": "^3.17.0",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@toolwind/corner-shape": "github:toolwind/corner-shape",
     "@types/katex": "^0.16.7",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",

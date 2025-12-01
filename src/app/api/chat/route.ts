@@ -33,6 +33,25 @@ export async function POST(req: Request) {
       );
     }
 
+    // Stelle sicher, dass die Knowledge Base initialisiert ist
+    // Warte auf Initialisierung, aber mit Timeout (max 5 Sekunden)
+    if (initPromise) {
+      try {
+        await Promise.race([
+          initPromise,
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("Init timeout")), 5000)
+          ),
+        ]);
+      } catch (error) {
+        console.warn(
+          "Knowledge Base Initialisierung noch nicht abgeschlossen:",
+          error
+        );
+        // Versuche trotzdem fortzufahren, falls Index bereits existiert
+      }
+    }
+
     // Default model if none provided
     const selectedModel = model || "google/gemini-2.5-flash-lite";
 
