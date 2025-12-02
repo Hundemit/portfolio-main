@@ -8,7 +8,7 @@ export const INITIAL_MESSAGE_TEXT =
  * Initial suggestions
  */
 export const INITIAL_SUGGESTIONS = [
-  "Welche Projekte hast du gemacht?",
-  "Was ist dein lieblings Essen?",
+  "Welche Berufserfahrung hast du?",
+  "Welche Projekte hast du umgesetzt?",
   "Erzähle mir mehr über dich.",
 ];
