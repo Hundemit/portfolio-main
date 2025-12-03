@@ -4,8 +4,7 @@ import type { Model } from "./types";
  * Available AI models for the chatbot
  */
 export const MODELS: Model[] = [
-  { id: "google/gemini-2.5-flash-lite", name: "Gemini 2.5 Flash" },
-  { id: "openai/gpt-5-nano", name: "GPT-5 Nano" },
+  { id: "google/gemini-2.0-flash-001", name: "Gemini 2.5 Flash" },
   { id: "x-ai/grok-4.1-fast", name: "Grok 4.1 Fast" },
 ];
 
